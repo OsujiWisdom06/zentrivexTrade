@@ -3,7 +3,10 @@
 ========================== */
 
 .investment-container{
+    width:100%;
     padding:30px;
+    background:#f8fafc;
+    min-height:calc(100vh - 80px);
 }
 
 
@@ -12,18 +15,28 @@
 ========================== */
 
 .investment-header{
+
+    width:100%;
     margin-bottom:30px;
+
 }
+
 
 .investment-header h2{
-    font-size:28px;
+
+    margin:0;
+    font-size:32px;
     color:#111827;
-    margin-bottom:8px;
+
 }
 
+
 .investment-header p{
-    color:#6b7280;
-    font-size:15px;
+
+    margin-top:8px;
+    color:gray;
+    font-size:17px;
+
 }
 
 
@@ -33,9 +46,13 @@
 ========================== */
 
 .plans-grid{
+
+    width:90%;
+    margin:auto;
     display:grid;
-    grid-template-columns:repeat(4, 1fr);
-    gap:25px;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+
 }
 
 
@@ -46,53 +63,75 @@
 
 .plan-card{
 
-    background:#ffffff;
-    border-radius:18px;
-    padding:25px;
-    border:1px solid #e5e7eb;
-    box-shadow:0 10px 25px rgba(0,0,0,.05);
+    width:100%;
+    min-height:350px;
+    background:#9dc3fe;
+    border-radius:15px;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
     transition:.3s;
+    box-sizing:border-box;
+
 }
 
 
+
 .plan-card:hover{
+
     transform:translateY(-5px);
-    box-shadow:0 15px 30px rgba(0,0,0,.1);
+
 }
 
 
 
 .plan-card h3{
 
-    font-size:22px;
-    color:#111827;
-    margin-bottom:25px;
+    margin:0;
+    color:#144da6;
+    font-size:23px;
+    font-weight:700;
 
 }
 
 
 
 /* ==========================
-   Details
+   Plan Details
 ========================== */
+
+.plan-details{
+
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+
+}
+
 
 
 .plan-details p{
 
-    color:#6b7280;
-    font-size:14px;
-    margin-bottom:5px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin:0;
+    color:#111827;
+    font-size:15px;
+    font-weight:600;
 
 }
 
 
-.plan-details h4{
 
-    color:#2563eb;
+.plan-details svg{
+
+    color:#144da6;
     font-size:18px;
-    margin-bottom:20px;
 
 }
+
 
 
 
@@ -100,16 +139,16 @@
    Button
 ========================== */
 
-
 .invest-btn{
 
     width:100%;
-    height:48px;
+    height:45px;
     border:none;
-    border-radius:12px;
-    background:#2563eb;
+    border-radius:10px;
+    background:#4570ea;
     color:white;
     font-size:16px;
+    font-weight:600;
     cursor:pointer;
     transition:.3s;
 
@@ -118,22 +157,93 @@
 
 .invest-btn:hover{
 
-    background:#1d4ed8;
+    background:#144da6;
 
 }
 
 
 
+
 /* ==========================
-   Large Laptop
+ Remove Number Input Arrows
+========================== */
+
+.investment-input-div input::-webkit-outer-spin-button,
+.investment-input-div input::-webkit-inner-spin-button{
+
+    -webkit-appearance:none;
+    margin:0;
+
+}
+
+
+.investment-input-div input[type="number"]{
+
+    -moz-appearance:textfield;
+    appearance:textfield;
+
+}
+
+
+
+
+/* ==========================
+   Modal Overlay
 ========================== */
 
 
-@media(max-width:1200px){
+.investment-modal-overlay{
 
-    .plans-grid{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.6);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    backdrop-filter:blur(5px);
 
-        grid-template-columns:repeat(2,1fr);
+}
+
+
+
+
+/* ==========================
+   Modal Box
+========================== */
+
+
+.investment-modal{
+
+    width:500px;
+    max-width:95%;
+    max-height:90vh;
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    animation:popup .35s ease;
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
+
+}
+
+
+
+@keyframes popup{
+
+    from{
+
+        opacity:0;
+        transform:translateY(40px) scale(.9);
+
+    }
+
+
+    to{
+
+        opacity:1;
+        transform:translateY(0) scale(1);
 
     }
 
@@ -141,12 +251,204 @@
 
 
 
+
 /* ==========================
-   Tablet
+   Modal Header
 ========================== */
 
 
+.investment-modal-header{
+
+    background:#144da6;
+    color:white;
+    padding:20px;
+
+}
+
+
+.investment-modal-header h2{
+
+    margin:0;
+
+}
+
+
+
+
+/* ==========================
+   Modal Body
+========================== */
+
+
+.investment-modal-body{
+
+    padding:25px;
+    display:grid;
+    gap:18px;
+    overflow-y:auto;
+    flex:1;
+
+}
+
+
+
+
+.investment-info-card{
+
+    border:1px solid #eee;
+    background:#fafafa;
+    border-radius:12px;
+    padding:18px;
+
+}
+
+
+
+.investment-info-card span{
+
+    color:gray;
+    font-size:14px;
+
+}
+
+
+
+.investment-info-card h3{
+
+    margin-top:8px;
+    color:#144da6;
+
+}
+
+
+
+
+
+/* ==========================
+ Input Section
+========================== */
+
+
+.investment-input-div{
+
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+
+}
+
+
+
+.investment-input-div label{
+
+    font-weight:600;
+
+}
+
+
+
+.investment-input-div input{
+
+    height:55px;
+    border-radius:10px;
+    border:1px solid #ddd;
+    padding:0 15px;
+    font-size:16px;
+
+}
+
+
+
+
+/* ==========================
+ Modal Footer
+========================== */
+
+
+.investment-modal-footer{
+
+    display:flex;
+    gap:15px;
+    padding:20px 25px;
+    border-top:1px solid #eee;
+
+}
+
+
+
+.submit-btn,
+.close-modal-btn{
+
+    flex:1;
+    height:50px;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+
+}
+
+
+
+.submit-btn{
+
+    background:#144da6;
+    color:white;
+
+}
+
+
+
+.submit-btn:hover{
+
+    background:#0e3a80;
+
+}
+
+
+
+.close-modal-btn{
+
+    background:#dc3545;
+    color:white;
+
+}
+
+
+
+.close-modal-btn:hover{
+
+    background:#bb2d3b;
+
+}
+
+
+
+
+/* ==========================
+   Responsive
+========================== */
+
+
+@media(max-width:1200px){
+
+
+    .plans-grid{
+
+        grid-template-columns:repeat(2,1fr);
+        width:100%;
+
+    }
+
+
+}
+
+
+
+
 @media(max-width:768px){
+
 
     .investment-container{
 
@@ -155,11 +457,13 @@
     }
 
 
+
     .investment-header h2{
 
-        font-size:24px;
+        font-size:26px;
 
     }
+
 
 
     .plans-grid{
@@ -169,16 +473,30 @@
     }
 
 
+
+    .plan-card{
+
+        min-height:330px;
+
+    }
+
+
+
+    .investment-modal-footer{
+
+        flex-direction:column;
+
+    }
+
+
 }
 
 
 
-/* ==========================
-   Small Mobile
-========================== */
 
 
 @media(max-width:480px){
+
 
     .investment-container{
 
@@ -187,24 +505,20 @@
     }
 
 
+
     .plan-card{
 
-        padding:20px;
+        padding:18px;
 
     }
 
 
-    .plan-card h3{
 
-        font-size:20px;
+    .investment-modal-body{
 
-    }
-
-
-    .plan-details h4{
-
-        font-size:16px;
+        padding:18px;
 
     }
+
 
 }

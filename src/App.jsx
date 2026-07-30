@@ -18,12 +18,23 @@ import MyWallet from './Pages/My Wallet'
 import Markets from './Pages/Market'
 import MyStocks from './Pages/MyStocks'
 import DasboardInvestmentPlans from './Component/DasboardInvestmentPlans'
+import { ToastContainer } from 'react-toastify'
 
 
 const App = () => {
   return (
     <div>
         <BrowserRouter>
+
+        <ToastContainer
+  position="top-right"
+  autoClose={3000}
+  hideProgressBar={false}
+  newestOnTop={true}
+  closeOnClick
+  pauseOnHover
+  toastClassName="custom-toast"
+/>
           <EarningsNotification/>
          <Routes>
           <Route path='/' element={<SplashScreen/>}></Route>
