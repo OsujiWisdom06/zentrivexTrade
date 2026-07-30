@@ -3,6 +3,7 @@ import "../styles/deposit.css";
 import Sidebar from "../Component/Dashboard/Sidebar";
 import TopHeader from "../Component/TopHeader";
 import { FaCopy } from "react-icons/fa";
+import { toast, ToastContainer } from "react-toastify";
 
 const Deposit = () => {
 
@@ -84,24 +85,27 @@ const Deposit = () => {
   };
 
 
+const continueDeposit = () => {
 
+  if (!depositAmount.trim()) {
 
-  const continueDeposit = () => {
+    toast.error("Please enter deposit amount");
 
+    return;
 
-    if(!depositAmount){
+  }
 
-      alert("Please enter deposit amount");
+  if (Number(depositAmount) <= 0) {
 
-      return;
+    toast.error("Deposit amount must be greater than 0");
 
-    }
+    return;
 
+  }
 
-    setShowConfirmation(true);
+  setShowConfirmation(true);
 
-
-  };
+};
 
 
 
@@ -124,6 +128,11 @@ const Deposit = () => {
   return (
 
     <div className="dashboard">
+
+      <ToastContainer
+  position="top-right"
+  autoClose={3000}
+/>
 
 
       <Sidebar
