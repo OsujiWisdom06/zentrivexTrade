@@ -30,7 +30,7 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
     {
       name: "Investment",
       icon: <FaChartLine />,
-      path: "/investment",
+      path: "/my-dashboard/investment-plans",
     },
     {
       name: "Deposit",

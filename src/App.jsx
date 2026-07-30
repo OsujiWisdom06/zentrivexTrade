@@ -17,6 +17,7 @@ import Withdraw from './Pages/Withdraw'
 import MyWallet from './Pages/My Wallet'
 import Markets from './Pages/Market'
 import MyStocks from './Pages/MyStocks'
+import DasboardInvestmentPlans from './Component/DasboardInvestmentPlans'
 
 
 const App = () => {
@@ -41,6 +42,7 @@ const App = () => {
                  <Route path='/my-wallet' element={< MyWallet/>}></Route>
                   <Route path='/markets' element={< Markets/>}></Route>
                    <Route path='/my-stocks' element={<   MyStocks/>}></Route>
+                   <Route path='/my-dashboard/investment-plans' element={<DasboardInvestmentPlans/>}></Route>
 
           </Routes>
         </BrowserRouter>
