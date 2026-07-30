@@ -37,5 +37,4 @@ const TopHeader = ({ toggleSidebar }) => {
     </header>
   );
 };
-J
 export default TopHeader;
