@@ -1,19 +1,33 @@
-import React from "react";
-import "../styles/profile.css"
+import React, { useState } from "react";
+import "../styles/profile.css";
 import Sidebar from "../Component/Dashboard/Sidebar";
-import Dashboardheader from "../Component/Dashboard/Dashboardheader";
-
-
+import TopHeader from "../Component/TopHeader";
 
 const Profile = () => {
+
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
+
   return (
     <div className="dashboard">
 
-      <Sidebar />
+      <Sidebar
+        isOpen={isSidebarOpen}
+        closeSidebar={closeSidebar}
+      />
 
       <main className="dashboard-main">
 
-        {/* <Dashboardheader /> */}
+        <TopHeader
+          toggleSidebar={toggleSidebar}
+        />
 
         <div className="profile-container">
 
@@ -23,6 +37,7 @@ const Profile = () => {
 
             <div className="profile-item">
               <label>Full Name</label>
+
               <div className="profile-value">
                 Wisdom Osuji
               </div>
@@ -30,6 +45,7 @@ const Profile = () => {
 
             <div className="profile-item">
               <label>Email Address</label>
+
               <div className="profile-value">
                 wisdom@email.com
               </div>
