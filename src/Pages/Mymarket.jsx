@@ -151,6 +151,167 @@ useEffect(() => {
 
 }, []);
 
+const trendingContainer = document.getElementById(
+  "trending_assets_widget"
+);
+
+if (trendingContainer) {
+
+  trendingContainer.innerHTML = "";
+
+  const script = document.createElement("script");
+
+  script.src =
+    "https://s3.tradingview.com/external-embedding/embed-widget-hotlists.js";
+
+  script.type = "text/javascript";
+
+  script.async = true;
+
+  script.innerHTML = `
+  {
+    "colorTheme": "light",
+    "dateRange": "12M",
+    "exchange": "US",
+    "showChart": true,
+    "locale": "en",
+    "width": "100%",
+    "height": "600",
+    "largeChartUrl": "",
+    "isTransparent": false,
+    "showSymbolLogo": true,
+    "showFloatingTooltip": true,
+    "plotLineColorGrowing": "rgba(37, 99, 235, 1)",
+    "plotLineColorFalling": "rgba(220, 38, 38, 1)",
+    "gridLineColor": "rgba(240,243,250,0)",
+    "scaleFontColor": "#6B7280",
+    "belowLineFillColorGrowing": "rgba(37,99,235,0.12)",
+    "belowLineFillColorFalling": "rgba(220,38,38,0.12)",
+    "symbolActiveColor": "rgba(37,99,235,0.12)"
+  }
+  `;
+
+  trendingContainer.appendChild(script);
+
+}
+
+const heatmapContainer = document.getElementById(
+  "crypto_heatmap_widget"
+);
+
+if (heatmapContainer) {
+
+  heatmapContainer.innerHTML = "";
+
+  const script = document.createElement("script");
+
+  script.src =
+    "https://s3.tradingview.com/external-embedding/embed-widget-crypto-coins-heatmap.js";
+
+  script.type = "text/javascript";
+
+  script.async = true;
+
+  script.innerHTML = `
+  {
+    "dataSource": "Crypto",
+    "blockSize": "market_cap_calc",
+    "blockColor": "24h_close_change|5",
+    "locale": "en",
+    "symbolUrl": "",
+    "colorTheme": "light",
+    "hasTopBar": false,
+    "isDataSetEnabled": false,
+    "isZoomEnabled": true,
+    "hasSymbolTooltip": true,
+    "width": "100%",
+    "height": "650"
+  }
+  `;
+
+  heatmapContainer.appendChild(script);
+
+}
+
+const moversContainer = document.getElementById(
+  "market_movers_widget"
+);
+
+if (moversContainer) {
+
+  moversContainer.innerHTML = "";
+
+  const script = document.createElement("script");
+
+  script.src =
+    "https://s3.tradingview.com/external-embedding/embed-widget-hotlists.js";
+
+  script.type = "text/javascript";
+
+  script.async = true;
+
+  script.innerHTML = `
+  {
+    "colorTheme": "light",
+    "dateRange": "12M",
+    "exchange": "US",
+    "showChart": true,
+    "locale": "en",
+    "largeChartUrl": "",
+    "isTransparent": false,
+    "showSymbolLogo": true,
+    "showFloatingTooltip": false,
+    "width": "100%",
+    "height": "600",
+    "plotLineColorGrowing": "rgba(41, 98, 255, 1)",
+    "plotLineColorFalling": "rgba(239, 83, 80, 1)",
+    "gridLineColor": "rgba(240,243,250,0)",
+    "scaleFontColor": "rgba(106,109,120,1)",
+    "belowLineFillColorGrowing": "rgba(41,98,255,0.12)",
+    "belowLineFillColorFalling": "rgba(239,83,80,0.12)",
+    "belowLineFillColorGrowingBottom": "rgba(41,98,255,0)",
+    "belowLineFillColorFallingBottom": "rgba(239,83,80,0)",
+    "symbolActiveColor": "rgba(41,98,255,0.12)"
+  }
+  `;
+
+  moversContainer.appendChild(script);
+
+}
+
+const newsContainer = document.getElementById(
+  "market_news_widget"
+);
+
+if (newsContainer) {
+
+  newsContainer.innerHTML = "";
+
+  const script = document.createElement("script");
+
+  script.src =
+    "https://s3.tradingview.com/external-embedding/embed-widget-timeline.js";
+
+  script.type = "text/javascript";
+
+  script.async = true;
+
+  script.innerHTML = `
+  {
+    "feedMode": "all_symbols",
+    "colorTheme": "light",
+    "isTransparent": false,
+    "displayMode": "regular",
+    "width": "100%",
+    "height": "650",
+    "locale": "en"
+  }
+  `;
+
+  newsContainer.appendChild(script);
+
+}
+
 
   return (
 
@@ -256,16 +417,21 @@ useEffect(() => {
 
           <div className="market-section">
 
-            <h3>
-              Trending Assets
-            </h3>
 
+           {/* Trending Assets */}
 
-            <div className="widget-placeholder">
+<div className="market-section">
 
-              Trending Assets Widget
+  <h3>
+    Trending Assets
+  </h3>
 
-            </div>
+  <div
+    id="trending_assets_widget"
+    className="trending-assets-widget"
+  ></div>
+
+</div>
 
 
           </div>
@@ -281,16 +447,20 @@ useEffect(() => {
           <div className="market-section">
 
 
-            <h3>
-              Crypto Heatmap
-            </h3>
+{/* Crypto Heatmap */}
 
+<div className="market-section">
 
-            <div className="widget-placeholder">
+  <h3>
+    Crypto Heatmap
+  </h3>
 
-              Crypto Heatmap Widget
+  <div
+    id="crypto_heatmap_widget"
+    className="crypto-heatmap-widget"
+  ></div>
 
-            </div>
+</div>
 
 
           </div>
@@ -306,46 +476,22 @@ useEffect(() => {
           <div className="market-section">
 
 
-            <h3>
-              Top Gainers & Losers
-            </h3>
+           {/* Top Gainers & Losers */}
 
+<div className="market-section">
 
-            <div className="widget-placeholder">
+  <h3>
+    Top Gainers & Losers
+  </h3>
 
-              Top Movers Widget
+  <div
+    id="market_movers_widget"
+    className="market-movers-widget"
+  ></div>
 
-            </div>
-
-
-          </div>
-
-
-
-
-
-
-
-
-          {/* Fear And Greed */}
-
-          <div className="market-section">
-
-
-            <h3>
-              Fear & Greed Index
-            </h3>
-
-
-            <div className="widget-placeholder">
-
-              Fear & Greed Index Widget
-
-            </div>
-
+</div>
 
           </div>
-
 
 
 
@@ -357,16 +503,20 @@ useEffect(() => {
           <div className="market-section">
 
 
-            <h3>
-              Market News
-            </h3>
+            {/* Market News */}
 
+<div className="market-section">
 
-            <div className="widget-placeholder">
+  <h3>
+    Market News
+  </h3>
 
-              Market News Widget
+  <div
+    id="market_news_widget"
+    className="market-news-widget"
+  ></div>
 
-            </div>
+</div>
 
 
           </div>

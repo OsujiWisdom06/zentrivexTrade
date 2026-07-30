@@ -350,3 +350,119 @@
 
 
 }
+
+/* ===========================
+   Trending Assets
+=========================== */
+
+.trending-assets-widget{
+    width:100%;
+    height:600px;
+    overflow:hidden;
+    border-radius:15px;
+}
+
+@media(max-width:768px){
+
+.trending-assets-widget{
+    height:500px;
+}
+
+}
+
+@media(max-width:480px){
+
+.trending-assets-widget{
+    height:420px;
+}
+
+}
+
+/* ==========================
+   Crypto Heatmap
+========================== */
+
+.crypto-heatmap-widget{
+
+    width:100%;
+    height:650px;
+    border-radius:15px;
+    overflow:hidden;
+
+}
+
+@media(max-width:768px){
+
+.crypto-heatmap-widget{
+
+    height:520px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.crypto-heatmap-widget{
+
+    height:430px;
+
+}
+
+}
+
+/* ==========================
+   Top Gainers & Losers
+========================== */
+
+.market-movers-widget{
+    width:100%;
+    height:600px;
+    border-radius:15px;
+    overflow:hidden;
+    background:#fff;
+}
+
+@media(max-width:768px){
+
+.market-movers-widget{
+    height:500px;
+}
+
+}
+
+@media(max-width:480px){
+
+.market-movers-widget{
+    height:420px;
+}
+
+}
+
+/* ==========================
+   Market News
+========================== */
+
+.market-news-widget{
+    width:100%;
+    height:650px;
+    border-radius:15px;
+    overflow:hidden;
+    background:#fff;
+}
+
+@media(max-width:768px){
+
+.market-news-widget{
+    height:550px;
+}
+
+}
+
+@media(max-width:480px){
+
+.market-news-widget{
+    height:450px;
+}
+
+}
