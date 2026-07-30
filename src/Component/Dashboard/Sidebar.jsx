@@ -9,12 +9,13 @@ import {
   FaBuilding,
   FaSignOutAlt,
 } from "react-icons/fa";
+import { IoClose } from "react-icons/io5";
 import { NavLink, useNavigate } from "react-router-dom";
-import "../../styles/sidebar.css"
+import "../../styles/sidebar.css";
 
-const Sidebar = ({ isOpen }) => {
+const Sidebar = ({ isOpen, closeSidebar }) => {
+  const nav = useNavigate();
 
-  const nav = useNavigate()
   const menuItems = [
     {
       name: "Dashboard",
@@ -69,34 +70,61 @@ const Sidebar = ({ isOpen }) => {
   ];
 
   return (
-    <div className={isOpen ? "sidebar active" : "sidebar"}>
-      <div className="sidebar-top">
-        <h2>Zentrivex</h2>
-        <span>Trade</span>
-      </div>
+    <>
+      {/* Overlay */}
+      {isOpen && (
+        <div className="sidebar-overlay" onClick={closeSidebar}></div>
+      )}
 
-      <div className="sidebar-links">
-        {menuItems.map((item, index) => (
-          <NavLink
-            key={index}
-            to={item.path}
-            className={({ isActive }) =>
-              isActive ? "sidebar-link active" : "sidebar-link"
-            }
-          >
-            <span>{item.icon}</span>
-            <p>{item.name}</p>
-          </NavLink>
-        ))}
-      </div>
+      <aside className={`sidebar ${isOpen ? "active" : ""}`}>
 
-      <div className="logout-section">
-        <button onClick={()=>nav("/")} className="logout-btn">
-          <FaSignOutAlt />
-          Logout
+        {/* Mobile Close Button */}
+
+        <button
+          className="sidebar-close-btn"
+          onClick={closeSidebar}
+        >
+          <IoClose />
         </button>
-      </div>
-    </div>
+
+        <div className="sidebar-top">
+          <h2>Zentrivex</h2>
+          <span>Trade</span>
+        </div>
+
+        <div className="sidebar-links">
+          {menuItems.map((item, index) => (
+            <NavLink
+              key={index}
+              to={item.path}
+              className={({ isActive }) =>
+                isActive
+                  ? "sidebar-link active"
+                  : "sidebar-link"
+              }
+              onClick={closeSidebar}
+            >
+              <span>{item.icon}</span>
+              <p>{item.name}</p>
+            </NavLink>
+          ))}
+        </div>
+
+        <div className="logout-section">
+          <button
+            className="logout-btn"
+            onClick={() => {
+              closeSidebar();
+              nav("/");
+            }}
+          >
+            <FaSignOutAlt />
+            Logout
+          </button>
+        </div>
+
+      </aside>
+    </>
   );
 };
 

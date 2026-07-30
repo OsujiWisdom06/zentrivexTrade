@@ -1,15 +1,26 @@
 import React from "react";
-import "../../styles/dashboardheader.css"
-import { IoNotificationsOutline } from "react-icons/io5";
+import "../../styles/dashboardheader.css";
+import { IoNotificationsOutline, IoMenu } from "react-icons/io5";
 import { FaUserCircle } from "react-icons/fa";
 
-const Dashboardheader = () => {
+const Dashboardheader = ({ toggleSidebar }) => {
   return (
     <header className="dashboard-header">
 
       <div className="dashboard-header-left">
-        <h2>Welcome, Wisdom</h2>
-        <p>Welcome back! Here's an overview of your account.</p>
+
+        <button
+          className="menu-btn"
+          onClick={toggleSidebar}
+        >
+          <IoMenu />
+        </button>
+
+        <div>
+          <h2>Welcome, Wisdom</h2>
+          <p>Welcome back! Here's an overview of your account.</p>
+        </div>
+
       </div>
 
       <div className="dashboard-header-right">

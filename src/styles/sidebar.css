@@ -1,18 +1,18 @@
-.sidebar {
-    width: 270px;
-    height: 100vh;
-    background: #0B1120;
-    color: #fff;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-right: 1px solid rgba(255,255,255,.08);
-    transition: .35s ease;
-    z-index: 1000;
-    overflow-y: auto;
+.sidebar{
+    width:270px;
+    height:100vh;
+    background:#0B1120;
+    color:#fff;
+    position:fixed;
+    top:0;
+    left:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    border-right:1px solid rgba(255,255,255,.08);
+    transition:.35s ease;
+    z-index:1000;
+    overflow-y:auto;
 }
 
 .sidebar::-webkit-scrollbar{
@@ -24,16 +24,50 @@
     border-radius:20px;
 }
 
-/* ---------- Logo ---------- */
+/* ==========================
+   Overlay
+========================== */
+
+.sidebar-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    z-index:999;
+}
+
+/* ==========================
+   Close Button
+========================== */
+
+.sidebar-close-btn{
+    display:none;
+    position:absolute;
+    right:15px;
+    top:15px;
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:50%;
+    background:#2563eb;
+    color:#fff;
+    font-size:24px;
+    cursor:pointer;
+    align-items:center;
+    justify-content:center;
+}
+
+/* ==========================
+   Logo
+========================== */
 
 .sidebar-top{
     padding:30px 25px;
 }
 
 .sidebar-top h2{
-    font-size:28px;
     margin:0;
     color:#fff;
+    font-size:28px;
 }
 
 .sidebar-top span{
@@ -41,7 +75,9 @@
     font-size:15px;
 }
 
-/* ---------- Links ---------- */
+/* ==========================
+   Links
+========================== */
 
 .sidebar-links{
     flex:1;
@@ -82,7 +118,9 @@
     color:#fff;
 }
 
-/* ---------- Logout ---------- */
+/* ==========================
+   Logout
+========================== */
 
 .logout-section{
     padding:20px;
@@ -153,11 +191,52 @@
 .sidebar{
     left:-100%;
     width:280px;
-    box-shadow:0 0 40px rgba(0,0,0,.4);
+    box-shadow:0 0 40px rgba(0,0,0,.45);
 }
 
 .sidebar.active{
     left:0;
+}
+
+.sidebar-close-btn{
+    display:flex;
+}
+
+}
+
+/* ==========================
+   Small Phones
+========================== */
+
+@media(max-width:480px){
+
+.sidebar{
+    width:250px;
+}
+
+.sidebar-top{
+    padding:25px 20px;
+}
+
+.sidebar-top h2{
+    font-size:24px;
+}
+
+.sidebar-link{
+    padding:12px;
+}
+
+.sidebar-link span{
+    font-size:18px;
+}
+
+.sidebar-link p{
+    font-size:14px;
+}
+
+.logout-btn{
+    height:48px;
+    font-size:15px;
 }
 
 }
