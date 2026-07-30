@@ -15,6 +15,7 @@ import "../../styles/sidebar.css";
 
 const Sidebar = ({ isOpen, closeSidebar }) => {
   const nav = useNavigate();
+  const zentrivexlogo = "/src/assets/zentrivextradelogo.jpeg"
 
   const menuItems = [
     {
@@ -88,8 +89,7 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
         </button>
 
         <div className="sidebar-top">
-          <h2>Zentrivex</h2>
-          <span>Trade</span>
+         <img src="zentrivexlogo" alt="logo" />
         </div>
 
         <div className="sidebar-links">
