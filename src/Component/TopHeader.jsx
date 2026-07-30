@@ -2,8 +2,10 @@ import React from "react";
 import { IoMenu, IoNotificationsOutline } from "react-icons/io5";
 import { FaUserCircle } from "react-icons/fa";
 import "../styles/topheader.css";
+import { useNavigate } from "react-router-dom";
 
 const TopHeader = ({ toggleSidebar }) => {
+  const nav = useNavigate()
   return (
     <header className="top-header">
 
@@ -26,19 +28,8 @@ const TopHeader = ({ toggleSidebar }) => {
       </div>
 
       <div className="top-header-right">
-
-        <div className="notification-box">
-          <IoNotificationsOutline />
-          <span className="notification-dot"></span>
-        </div>
-
         <div className="user-box">
-          <FaUserCircle className="user-icon" />
-
-          <div>
-            <h4>Wisdom</h4>
-            <p>Investor</p>
-          </div>
+          <FaUserCircle onClick={()=>nav("/profile")} className="user-icon" />
         </div>
 
       </div>
