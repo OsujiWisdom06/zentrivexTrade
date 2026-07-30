@@ -1,0 +1,153 @@
+.markets-container{
+    width:100%;
+    padding:30px;
+}
+
+.markets-header{
+    margin-bottom:30px;
+}
+
+.markets-header h2{
+    font-size:30px;
+    color:#111827;
+    margin-bottom:8px;
+}
+
+.markets-header p{
+    color:#6b7280;
+}
+
+.markets-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.market-card{
+    background:#fff;
+    border-radius:18px;
+    padding:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.market-card:hover{
+    transform:translateY(-6px);
+}
+
+.market-top{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.market-icon{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:#eef4ff;
+    color:#2563eb;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+}
+
+.market-top h3{
+    color:#111827;
+    margin-bottom:5px;
+}
+
+.market-top span{
+    color:#6b7280;
+}
+
+.market-card h1{
+    font-size:28px;
+    color:#111827;
+    margin-bottom:25px;
+}
+
+.market-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.market-change{
+    color:#16a34a;
+    font-weight:600;
+}
+
+.market-bottom button{
+    border:none;
+    background:#2563eb;
+    color:#fff;
+    padding:10px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.market-bottom button:hover{
+    background:#1d4ed8;
+}
+
+/* Tablet */
+
+@media(max-width:1024px){
+
+.markets-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.markets-container{
+    padding:20px;
+}
+
+.markets-grid{
+    grid-template-columns:1fr;
+}
+
+.markets-header h2{
+    font-size:24px;
+}
+
+.market-card{
+    padding:20px;
+}
+
+}
+
+@media(max-width:480px){
+
+.markets-container{
+    padding:15px;
+}
+
+.markets-header h2{
+    font-size:22px;
+}
+
+.market-card h1{
+    font-size:24px;
+}
+
+.market-bottom{
+    flex-direction:column;
+    gap:15px;
+    align-items:flex-start;
+}
+
+.market-bottom button{
+    width:100%;
+}
+
+}

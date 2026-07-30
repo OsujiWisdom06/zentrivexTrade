@@ -1,0 +1,140 @@
+.withdraw-container{
+    width:100%;
+    padding:30px;
+}
+
+.withdraw-header{
+    margin-bottom:30px;
+}
+
+.withdraw-header h2{
+    font-size:30px;
+    color:#111827;
+}
+
+.withdraw-header p{
+    margin-top:8px;
+    color:#6b7280;
+}
+
+.withdraw-card{
+    width:100%;
+    background:#fff;
+    border-radius:20px;
+    padding:35px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.available-balance{
+    background:#2563eb;
+    color:#fff;
+    border-radius:15px;
+    padding:25px;
+    margin-bottom:30px;
+}
+
+.available-balance h4{
+    font-size:16px;
+    font-weight:500;
+}
+
+.available-balance h2{
+    margin-top:10px;
+    font-size:32px;
+}
+
+.withdraw-item{
+    margin-bottom:25px;
+}
+
+.withdraw-item label{
+    display:block;
+    margin-bottom:10px;
+    color:#374151;
+    font-weight:600;
+}
+
+.withdraw-item input,
+.withdraw-item select{
+    width:100%;
+    height:55px;
+    border:1px solid #d1d5db;
+    border-radius:12px;
+    padding:0 18px;
+    font-size:16px;
+    outline:none;
+    transition:.3s;
+}
+
+.withdraw-item input:focus,
+.withdraw-item select:focus{
+    border-color:#2563eb;
+}
+
+.withdraw-btn{
+    width:100%;
+    height:55px;
+    border:none;
+    border-radius:12px;
+    background:#2563eb;
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.withdraw-btn:hover{
+    background:#1d4ed8;
+}
+
+/* Tablet */
+
+@media(max-width:768px){
+
+.withdraw-container{
+    padding:20px;
+}
+
+.withdraw-card{
+    padding:25px;
+}
+
+.withdraw-header h2{
+    font-size:26px;
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:480px){
+
+.withdraw-container{
+    padding:15px;
+}
+
+.withdraw-card{
+    padding:18px;
+    border-radius:15px;
+}
+
+.withdraw-header h2{
+    font-size:22px;
+}
+
+.withdraw-item input,
+.withdraw-item select{
+    height:50px;
+    font-size:14px;
+}
+
+.withdraw-btn{
+    height:50px;
+}
+
+.available-balance h2{
+    font-size:26px;
+}
+
+}

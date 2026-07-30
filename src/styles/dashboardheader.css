@@ -1,0 +1,182 @@
+.dashboard-header {
+  width: 100%;
+  min-height: 90px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 35px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+  gap: 20px;
+}
+
+.dashboard-header-left {
+  flex: 1;
+}
+
+.dashboard-header-left h2 {
+  font-size: 30px;
+  color: #111827;
+  margin-bottom: 5px;
+}
+
+.dashboard-header-left p {
+  color: #6b7280;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.dashboard-header-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.notification-box {
+  width: 52px;
+  height: 52px;
+  background: #f3f4f6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s;
+  flex-shrink: 0;
+}
+
+.notification-box:hover {
+  background: #2563eb;
+  color: #fff;
+}
+
+.notification-box svg {
+  font-size: 24px;
+}
+
+.notification-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ef4444;
+  position: absolute;
+  top: 12px;
+  right: 13px;
+}
+
+.user-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.user-icon {
+  font-size: 48px;
+  color: #2563eb;
+}
+
+.user-box h4 {
+  font-size: 17px;
+  color: #111827;
+  margin: 0;
+}
+
+.user-box p {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 3px 0 0;
+}
+
+/* ==========================
+   Large Tablets
+========================== */
+
+@media (max-width: 1024px) {
+  .dashboard-header {
+    padding: 20px 25px;
+  }
+
+  .dashboard-header-left h2 {
+    font-size: 26px;
+  }
+}
+
+/* ==========================
+   Tablets
+========================== */
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .dashboard-header-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .dashboard-header-left h2 {
+    font-size: 24px;
+  }
+
+  .dashboard-header-left p {
+    font-size: 14px;
+  }
+}
+
+/* ==========================
+   Mobile
+========================== */
+
+@media (max-width: 480px) {
+  .dashboard-header {
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .dashboard-header-left h2 {
+    font-size: 22px;
+  }
+
+  .dashboard-header-left p {
+    font-size: 13px;
+  }
+
+  .dashboard-header-right {
+    gap: 15px;
+  }
+
+  .notification-box {
+    width: 45px;
+    height: 45px;
+  }
+
+  .notification-box svg {
+    font-size: 20px;
+  }
+
+  .notification-dot {
+    width: 8px;
+    height: 8px;
+    top: 10px;
+    right: 10px;
+  }
+
+  .user-icon {
+    font-size: 42px;
+  }
+
+  .user-box h4 {
+    font-size: 15px;
+  }
+
+  .user-box p {
+    font-size: 12px;
+  }
+}

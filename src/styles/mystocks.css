@@ -1,0 +1,232 @@
+/* ===========================
+   My Stocks
+=========================== */
+
+.stocks-container {
+    width: 100%;
+    padding: 30px;
+}
+
+.stocks-header {
+    margin-bottom: 30px;
+}
+
+.stocks-header h2 {
+    font-size: 30px;
+    color: #111827;
+    margin-bottom: 8px;
+}
+
+.stocks-header p {
+    color: #6b7280;
+    font-size: 15px;
+}
+
+/* ===========================
+   Empty State
+=========================== */
+
+.empty-stock-card {
+    width: 100%;
+    min-height: 500px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 50px 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.empty-stock-icon {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: #eef4ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    margin-bottom: 25px;
+}
+
+.empty-stock-card h3 {
+    font-size: 28px;
+    color: #111827;
+    margin-bottom: 15px;
+}
+
+.empty-stock-card p {
+    max-width: 600px;
+    color: #6b7280;
+    line-height: 1.8;
+    margin-bottom: 35px;
+    font-size: 16px;
+}
+
+.browse-market-btn {
+    border: none;
+    background: #2563eb;
+    color: #fff;
+    padding: 15px 35px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.browse-market-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-3px);
+}
+
+/* ===========================
+   Stock Cards (Future)
+=========================== */
+
+.stocks-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+.stock-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    transition: .3s;
+}
+
+.stock-card:hover {
+    transform: translateY(-5px);
+}
+
+.stock-top {
+    margin-bottom: 20px;
+}
+
+.stock-top h3 {
+    color: #111827;
+    margin-bottom: 5px;
+}
+
+.stock-top span {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.stock-info p {
+    margin-bottom: 14px;
+    color: #374151;
+    font-size: 15px;
+}
+
+.stock-info strong {
+    color: #111827;
+}
+
+.profit {
+    color: #16a34a;
+    font-weight: 700;
+}
+
+.loss {
+    color: #dc2626;
+    font-weight: 700;
+}
+
+/* ===========================
+   Laptop
+=========================== */
+
+@media (max-width: 1024px) {
+
+    .stocks-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+}
+
+/* ===========================
+   Tablet
+=========================== */
+
+@media (max-width: 768px) {
+
+    .stocks-container {
+        padding: 20px;
+    }
+
+    .stocks-header h2 {
+        font-size: 26px;
+    }
+
+    .stocks-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .empty-stock-card {
+        min-height: 420px;
+        padding: 30px 20px;
+    }
+
+    .empty-stock-card p {
+        max-width: 100%;
+    }
+
+}
+
+/* ===========================
+   Mobile
+=========================== */
+
+@media (max-width: 480px) {
+
+    .stocks-container {
+        padding: 15px;
+    }
+
+    .stocks-header h2 {
+        font-size: 22px;
+    }
+
+    .stocks-header p {
+        font-size: 14px;
+    }
+
+    .empty-stock-card {
+        min-height: 350px;
+        padding: 25px 18px;
+        border-radius: 15px;
+    }
+
+    .empty-stock-icon {
+        width: 85px;
+        height: 85px;
+        font-size: 40px;
+    }
+
+    .empty-stock-card h3 {
+        font-size: 22px;
+    }
+
+    .empty-stock-card p {
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+
+    .browse-market-btn {
+        width: 100%;
+        padding: 14px;
+        font-size: 15px;
+    }
+
+    .stock-card {
+        padding: 20px;
+    }
+
+}

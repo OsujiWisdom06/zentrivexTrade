@@ -1,0 +1,246 @@
+.about-us{
+    width: 100%;
+    height: auto;
+}
+
+.about-us-main{
+    width: 100%;
+    height: 52vh;
+    /* background-color: blue; */
+    background-image: url("../assets//zentrivextradeaboutus.jpeg");
+     background-position: center;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+
+@keyframes zoomUp {
+    from {
+        opacity: 0;
+        transform: translateY(100px) scale(0.75);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+.about-us-hero-inner{
+    width: 60%;
+    height: 53%;
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 600;
+    gap: 13px;
+    color: white;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     animation: zoomUp 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+
+    & h1{
+        font-size: 38px;
+    }
+}
+
+.about-us-our-mission-our-vision{
+    width: 100%;
+    height: 110vh;
+    background-color: #000000;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.about-us-our-mission-div{
+    width: 100%;
+    height: 55%;
+    /* background-color: magenta; */
+    display: flex;
+    flex-direction: row;
+}
+
+.about-us-our-mission-div1{
+    width: 50%;
+    height: 100%;
+    /* background-color: aqua; */
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: center;
+    gap: 15px;
+    padding-left: 120px;
+
+    & h1 {
+        font-size: 35px;
+    }
+}
+
+
+.about-us-our-mission-div2{
+    width: 50%;
+    height: 100%;
+    /* background-color: maroon; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-us-our-mission-div2-inner-image{
+    width: 42%;
+    height: 70%;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.about-us-our-vision-div{
+    width: 100%;
+    height: 55%;
+    /* background-color: purple; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-us-our-vision-div-inner{
+    width: 60%;
+    height: 70%;
+    /* background-color: blue; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    gap: 15px;
+
+    & h1 {
+        font-size: 45px;
+    }
+}
+
+.why-choose-us-div{
+    width: 100%;
+    height: 130vh;
+    background-color: #17191c;
+    display: flex;
+    flex-direction: column;
+}
+
+.why-choose-us-div-top{
+    width: 100%;
+    height: 50%;
+     display: flex;
+    flex-direction: row;
+    /* background-color: yellow; */
+}
+
+.why-choose-us-div-top-1{
+    width: 50%;
+    height: 100%;
+    /* background-color: blue; */
+    display: flex;
+    padding-left: 120px;
+    flex-direction: column;
+    font-weight: 600;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    color: gray;
+
+    & h1 {
+        padding-right: 80px;
+        color: white;
+        font-size: 35px;
+        font-weight: 600;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+}
+
+.why-choose-us-div-top-2{
+    width: 50%;
+    height: 100%;
+    /* background-color: green; */
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    align-items: center;
+}
+
+.why-choose-us-div-top-2-inner-image{
+    width: 55%;
+    height: 100%;
+    /* background-color: yellow; */
+
+    & img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.why-choose-us-div-btm{
+    width: 100%;
+    height: 50%;
+    /* background-color: magenta; */
+    display: flex;
+    flex-direction: row;
+}
+
+.why-choose-us-div-btm-1{
+    width: 50%;
+    height: 100%;
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.why-choose-us-div-btm-1-image-div{
+    width: 40%;
+    height: 65%;
+    /* background-color: red; */
+
+    & img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.why-choose-us-div-btm-2{
+     width: 50%;
+    height: 100%;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* justify-content: center; */
+    gap: 15px;
+    padding-top: 35px;
+    padding-right: 120px;
+    align-items: center;
+    color: gray;
+
+    & h1 {
+        color: white;
+        font-size: 37px;
+        font-weight: 600;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+}

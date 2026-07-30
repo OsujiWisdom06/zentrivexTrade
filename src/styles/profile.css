@@ -1,0 +1,140 @@
+.profile-container {
+    width: 100%;
+    padding: 30px;
+}
+
+.profile-title {
+    margin-bottom: 30px;
+}
+
+.profile-title h2 {
+    font-size: 30px;
+    color: #111827;
+    font-weight: 700;
+}
+
+.profile-title p {
+    color: #6b7280;
+    margin-top: 8px;
+    font-size: 15px;
+}
+
+.profile-card {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f1f5f9;
+}
+
+.profile-item {
+    margin-bottom: 25px;
+}
+
+.profile-item:last-child {
+    margin-bottom: 0;
+}
+
+.profile-item label {
+    display: block;
+    font-size: 15px;
+    color: #6b7280;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.profile-value {
+    width: 100%;
+    height: 58px;
+    border: 1px solid #dbe3ee;
+    border-radius: 12px;
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    padding: 0 18px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #111827;
+    transition: all 0.3s ease;
+}
+
+.profile-value:hover {
+    border-color: #2563eb;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+/* ==========================
+   Laptop
+========================== */
+
+@media (max-width: 1024px) {
+    .profile-container {
+        padding: 25px;
+    }
+
+    .profile-card {
+        padding: 30px;
+    }
+}
+
+/* ==========================
+   Tablet
+========================== */
+
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 20px;
+    }
+
+    .profile-title h2 {
+        font-size: 26px;
+    }
+
+    .profile-card {
+        padding: 25px;
+    }
+
+    .profile-value {
+        height: 54px;
+        font-size: 15px;
+    }
+}
+
+/* ==========================
+   Mobile
+========================== */
+
+@media (max-width: 480px) {
+    .profile-container {
+        padding: 15px;
+    }
+
+    .profile-title h2 {
+        font-size: 22px;
+    }
+
+    .profile-title p {
+        font-size: 14px;
+    }
+
+    .profile-card {
+        padding: 18px;
+        border-radius: 15px;
+    }
+
+    .profile-item {
+        margin-bottom: 18px;
+    }
+
+    .profile-item label {
+        font-size: 14px;
+    }
+
+    .profile-value {
+        height: 50px;
+        font-size: 14px;
+        padding: 0 14px;
+    }
+}

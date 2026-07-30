@@ -1,0 +1,752 @@
+.landing-page-main{
+    width: 100%;
+    height: auto;
+}
+
+
+.landing-header-top{
+    width: 100%;
+    height: 5vh;
+    /* background-color: yellow; */
+}
+
+.live-data-market-div-2-main {
+  display: flex;
+  justify-content: center;
+}
+
+.tradingview-widget-container {
+  width: 60%;
+  height: 50vh;
+}
+
+.tradingview-widget-container__widget {
+  width: 100%;
+  height: 100%;
+  background-color: #262626;
+}
+
+.landing-header-top {
+  width: 100%;
+  height: 60px;
+  overflow: hidden;
+}
+
+.tradingview-widget-container {
+  width: 100%;
+  height: 100%;
+}
+
+.tradingview-widget-container__widget {
+  width: 100%;
+  height: 100%;
+}
+
+.landing-hero-page{
+    width: 100%;
+    height: 100vh;
+    /* background-color: blue; */
+    background-image: url("/src//assets/zentrivextradeheroimg.jpeg");
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-hero-page-wrap{
+    width: 65%;
+    height: 100%;
+    /* background-color: green; */
+}
+
+.landing-hero-page-div-1{
+    width: 100%;
+    height: 40%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     animation: zoomUp 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes zoomUp {
+    from {
+        opacity: 0;
+        transform: translateY(100px) scale(0.75);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.landing-hero-page-div-2{
+    width: 100%;
+    height: 20%;
+    /* background-color: orange; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 20px;
+    color: gray;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    animation: zoomUp 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.landing-hero-page-div-3{
+    width: 100%;
+    height: 20%;
+    /* background-color: purple; */
+    display: flex;
+    flex-direction: row;
+}
+
+.hero-statistics-div1{
+    width: 30%;
+    height: 100%;
+    /* background-color: yellow; */
+    border-right: 2px solid gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    & h1{
+        color: #438617;
+        font-size: 50px;
+    }
+
+}
+
+
+.hero-statistics-div2{
+    width: 40%;
+    height: 100%;
+    /* background-color: blue; */
+     border-right: 2px solid gray;
+      display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    
+    & h1{
+        color: #438617;
+        font-size: 50px;
+    }
+}
+
+
+.hero-statistics-div3{
+    width: 30%;
+    height: 100%;
+    /* background-color: green; */
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    
+    & h1{
+        color: #438617;
+        font-size: 50px;
+    }
+}
+
+.landing-hero-page-div-4{
+    width: 100%;
+    height: 20%;
+    /* background-color: maroon; */
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.hero-div-start-investing{
+    width: 50%;
+    height: 45%;
+    /* background-color: green; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.start-investing-btn{
+    width: 45%;
+    height: 100%;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    background-color: #438617;
+    color: white;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+
+
+.view-market-btn{
+    width: 45%;
+    height: 100%;
+     border-radius: 15px;
+     border: 1px solid gray;
+     cursor: pointer;
+     color: white;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    background: none;
+}
+
+.live-data-market-div{
+    width: 100%;
+    height: 100vh;
+    background-color: #101828;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.live-data-market-div-wrap{
+    width: 65%;
+    height: 100%;
+    /* background-color: blue; */
+}
+
+.live-data-market-div-1{
+    width: 100%;
+    height: 30%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+
+    & h1{
+        font-size: 35px;
+        color: white;
+    }
+}
+
+
+.live-data-market-div-2{
+    width: 100%;
+    height: 70%;
+    /* background-color: green; */
+}
+
+.live-data-market-div-2-main{
+    width: 100%;
+    height: 92%;
+    /* background-color: blue; */
+    /* border: 1px solid gray; */
+}
+
+.live-data-market-div-2-btm{
+     width: 100%;
+    height: 5%;
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+}
+
+.why-zentrivex-trade{
+    width: 100%;
+    height: 127vh;
+    background-color: #020203;
+}
+
+.why-zentrivex-trade-div-1{
+    width: 100%;
+    height: 32%;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.why-zentrivex-trade-div-1-wrap{
+    width:58%;
+    height: 62%;
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.why-zentrivex-trade-div-1-wrap-top{
+    width: 25%;
+    height: 23%;
+    background-color: #438617;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    color: white;
+}
+
+.why-zentrivex-trade-div-1-wrap-btm{
+    width: 100%;
+    height: 75%;
+    /* background-color: magenta; */
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-items: center;
+    justify-content: center;
+
+    & h1 {
+        font-size: 40px;
+        color: #438617;
+    }
+}
+
+.why-zentrivex-trade-div2{
+     width: 100%;
+    height: 68%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.why-zentrivex-trade-div2-wrap{
+    width: 80%;
+    height: 100%;
+    /* background-color: green; */
+    display: flex;
+    flex-direction: column;
+}
+
+.why-zentrivex-trade-div2-box-top{
+    width: 100%;
+    height: 50%;
+    /* background-color: magenta; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+.why-zentrivex-trade-div2-box-top-1{
+    width: 45%;
+    height: 90%;
+    background-color: black;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid gray;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+}
+
+.why-zentrivex-trade-div2-box-top-1:hover{
+   border: 1px solid orangered;
+}
+
+.why-zentrivex-trade-div2-box-top-2{
+    width: 45%;
+    height: 90%;
+    background-color: black;
+     border-radius: 15px;
+      display: flex;
+    justify-content: center;
+    align-items: center;
+     border: 1px solid gray;
+     cursor: pointer;
+}
+
+.why-zentrivex-trade-div2-box-top-2:hover{
+    border: 1px solid #438617;
+}
+
+.why-zentrivex-trade-div2-box-top-3{
+    width: 45%;
+    height: 90%;
+    background-color: black;
+     border-radius: 15px;
+      display: flex;
+    justify-content: center;
+    align-items: center;
+     border: 1px solid gray;
+     cursor: pointer;
+}
+
+.why-zentrivex-trade-div2-box-top-3:hover{
+      border: 1px solid blue;
+}
+
+.why-zentrivex-trade-div2-box-btm{
+    width: 100%;
+    height: 50%;
+    /* background-color: orangered; */
+     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+.why-zentrivex-trade-div2-box-top-1-wrap{
+    width: 85%;
+    height: 85%;
+    /* background-color: yellow; */
+}
+
+.why-zentrivex-trade-div2-box-top-1-text1{
+    width: 100%;
+    height: 40%;
+    /* background-color: magenta; */
+}
+
+.why-zentrivex-trade-div2-box-top-1-text1-image-div{
+    width: 30%;
+    height: 100%;
+    color: white;
+
+    & img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.why-zentrivex-trade-div2-box-top-1-text2{
+    width: 100%;
+    height: 60%;
+    /* background-color: orangered; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+
+    & h1 {
+        font-size: 17px;
+        color: white;
+    }
+}
+
+.trusted-by-investors-div{
+    width: 100%;
+    height: 140vh;
+    background-color: #111827;
+}
+
+.trusted-by-investors-div-1{
+    width: 100%;
+    height: 25%;
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.trusted-by-investors-div-1-inner{
+    width: 40%;
+    height: 50%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+
+    & h1 {
+        font-size: 35px;
+        color: white;
+    }
+}
+
+.trusted-by-investors-div-2{
+    width: 100%;
+    height: 35%;
+    /* background-color: green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.trusted-by-investors-div-2-inner{
+    width: 68%;
+    height: 100%;
+    background-color: #1f2937;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.trusted-by-investors-div-2-inner-wrap{
+    width: 90%;
+    height: 85%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+}
+
+
+.trusted-by-investors-div-2-inner-wrap-1{
+    width: 50%;
+    height: 100%;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: row;
+}
+
+.trusted-by-investors-div-2-inner-wrap-rating-div{
+    width: 80%;
+    height: 100%;
+    /* background-color: red; */
+}
+
+.trusted-by-investors-div-2-inner-wrap-rating-div-top1{
+    width: 100%;
+    height: 50%;
+    /* background-color: magenta; */
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    /* font-size: 5px; */
+
+    & h1{
+        font-size: 50px;
+        color: white;
+    }
+
+    & P {
+        color: gray;
+    }
+}
+
+.rating-icon{
+    position: absolute;
+    bottom: 60px;
+    font-size: 30px;
+    color: yellow;
+}
+
+.trusted-by-investors-div-2-inner-wrap-rating-div-btm{
+    width: 100%;
+    height: 50%;
+    /* background-color: maroon; */
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    gap: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.trusted-div-number-rating{
+    color: yellow;
+}
+
+.trusted-by-investors-div-2-inner-wrap-rating-number-div{
+    width: 20%;
+    height: 100%;
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+     gap: 6px;
+     font-weight: 600;
+     color: gray;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.trusted-by-investors-div-2-inner-wrap-2{
+    width: 50%;
+    height: 100%;
+    /* background-color: green; */
+    display: flex;
+    flex-direction: row;
+}
+
+.trusted-by-investors-div-2-inner-wrap-2-active-users{
+    width: 50%;
+    height: 100%;
+    /* background-color: orangered; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    gap: 7px;
+}
+
+.trusted-by-investors-div-2-inner-wrap-2-asset-managed{
+    width: 50%;
+    height: 100%;
+    /* background-color: brown; */
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    gap: 7px;
+}
+
+.trusted-by-investors-div-3{
+    width: 100%;
+    height: 40%;
+    /* background-color: purple; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.trusted-by-investors-div-3-inner{
+    width: 33%;
+    height: 70%;
+     background-color: #1f2937;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.testimonial-animate{
+    animation: zoomUp .6s ease;
+}
+
+@keyframes zoomUp{
+    0%{
+        opacity: 0;
+        transform: translateY(35px) scale(.85);
+    }
+
+    60%{
+        opacity: 1;
+        transform: translateY(-8px) scale(1.05);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.trusted-by-investors-div-3-inner-wrap{
+    width: 80%;
+    height: 80%;
+    /* background-color: green; */
+}
+
+.trusted-by-investors-div-3-inner-wrap-div1{
+    width: 100%;
+    height: 20%;
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: yellow;
+}
+
+.trusted-by-investors-div-3-inner-wrap-div2{
+    width: 100%;
+    height: 50%;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+.trusted-by-investors-div-3-inner-wrap-div3{
+    width: 100%;
+    height: 30%;
+    /* background-color: orangered; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.trusted-by-investors-div-3-inner-wrap-div3-inner-main{
+    width: 70%;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    /* background-color: magenta; */
+}
+
+.trusted-by-investors-div-3-inner-wrap-div3-inner-main-image-div{
+    width: 25%;
+    height: 100%;
+    /* background-color: yellow; */
+    border-radius: 35px;
+
+    & img {
+        width: 100%;
+        height: 100%;
+         border-radius: 35px;
+    }
+}
+
+.trusted-by-investors-div-3-inner-wrap-div3-inner-main-name-div{
+    width: 75%;
+    height: 100%;
+    /* background-color: purple; */
+}
+
+.trusted-by-investors-div-3-inner-wrap-div3-inner-main-name-div-top1{
+    width: 100%;
+    height: 50%;
+    /* background-color: green; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+}
+
+
+.trusted-by-investors-div-3-inner-wrap-div3-inner-main-name-div-top2{
+    width: 100%;
+    height: 50%;
+    /* background-color: red; */
+    color: gray;
+    display: flex;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    padding-left: 15px;
+}

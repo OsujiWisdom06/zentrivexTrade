@@ -1,0 +1,64 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.dashboard{
+    width:100%;
+    min-height:100vh;
+    background:#f4f7fc;
+    display:flex;
+}
+
+.dashboard-main{
+    flex:1;
+    margin-left:270px;
+    padding:30px;
+}
+
+/* ==========================
+   Large Laptop
+========================== */
+
+@media(max-width:1200px){
+
+.dashboard-main{
+    margin-left:240px;
+}
+
+}
+
+/* ==========================
+   Tablet
+========================== */
+
+@media(max-width:992px){
+
+.dashboard-main{
+    margin-left:220px;
+    padding:25px;
+}
+
+}
+
+/* ==========================
+   Mobile
+========================== */
+
+@media(max-width:768px){
+
+.dashboard-main{
+    margin-left:0;
+    padding:20px;
+}
+
+}
+
+@media(max-width:480px){
+
+.dashboard-main{
+    padding:15px;
+}
+
+}

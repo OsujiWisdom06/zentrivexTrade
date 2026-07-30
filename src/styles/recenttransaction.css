@@ -1,0 +1,172 @@
+.transactions{
+    width:100%;
+    background:#fff;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    margin-bottom:30px;
+}
+
+.transactions-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+    gap:20px;
+}
+
+.transactions-header h2{
+    font-size:28px;
+    color:#111827;
+    margin-bottom:5px;
+}
+
+.transactions-header p{
+    color:#6b7280;
+}
+
+.transactions-header button{
+    border:none;
+    background:#2563eb;
+    color:#fff;
+    padding:12px 22px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+    font-weight:600;
+}
+
+.transactions-header button:hover{
+    background:#1d4ed8;
+}
+
+.transactions-table{
+    width:100%;
+}
+
+.table-head,
+.table-row{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    align-items:center;
+    padding:18px 0;
+}
+
+.table-head{
+    border-bottom:1px solid #e5e7eb;
+    color:#6b7280;
+    font-weight:600;
+}
+
+.table-row{
+    border-bottom:1px solid #f3f4f6;
+    transition:.3s;
+}
+
+.table-row:hover{
+    background:#f9fafb;
+}
+
+.transaction-info{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.transaction-info p{
+    margin:0;
+    color:#111827;
+    font-weight:600;
+}
+
+.transaction-icon{
+    width:45px;
+    height:45px;
+    border-radius:12px;
+    background:#dbeafe;
+    color:#2563eb;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:18px;
+}
+
+.status{
+    width:110px;
+    text-align:center;
+    padding:8px 12px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.completed{
+    background:#dcfce7;
+    color:#15803d;
+}
+
+.pending{
+    background:#fef3c7;
+    color:#b45309;
+}
+
+/* =========================
+   Tablet
+========================= */
+
+@media(max-width:900px){
+
+.table-head{
+    display:none;
+}
+
+.table-row{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+    padding:20px;
+    border:1px solid #e5e7eb;
+    border-radius:15px;
+    margin-bottom:15px;
+}
+
+.status{
+    width:auto;
+}
+
+}
+
+/* =========================
+   Mobile
+========================= */
+
+@media(max-width:480px){
+
+.transactions{
+    padding:20px;
+}
+
+.transactions-header{
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.transactions-header button{
+    width:100%;
+}
+
+.transactions-header h2{
+    font-size:22px;
+}
+
+.transaction-info{
+    gap:12px;
+}
+
+.transaction-icon{
+    width:40px;
+    height:40px;
+}
+
+}
