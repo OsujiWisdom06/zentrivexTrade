@@ -135,3 +135,218 @@
     justify-content: space-between;
     gap: 1opx;
 }
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+========================================================== */
+
+/* ===========================
+   Laptop & Small Desktop
+=========================== */
+
+@media screen and (max-width:1024px){
+
+.our-service-hero{
+    height:auto;
+    min-height:50vh;
+    padding:80px 30px;
+    background-size:cover;
+}
+
+.our-service-hero-inner{
+    width:85%;
+    height:auto;
+}
+
+.our-service-hero-inner h1{
+    font-size:35px;
+}
+
+.our-services-we-thrive-div{
+    height:auto;
+    padding:70px 30px;
+}
+
+.our-services-we-thrive-div-top-1{
+    height:auto;
+    padding-top:0;
+}
+
+.our-services-we-thrive-div-top-1 h1{
+    text-align:center;
+}
+
+.our-services-we-thrive-div-top-2{
+    height:auto;
+    margin-top:50px;
+}
+
+.our-services-we-thrive-div-top-2-wrap{
+    width:100%;
+    height:auto;
+}
+
+.our-services-we-thrive-div-top-top1-div,
+.our-services-we-thrive-div-top-top2-div{
+    gap:20px;
+}
+
+.our-services-first-box-investmentplans{
+    width:32%;
+    height:auto;
+    min-height:280px;
+}
+
+}
+
+
+/* ===========================
+   Tablets
+=========================== */
+
+@media screen and (max-width:768px){
+
+.our-service-hero{
+    min-height:55vh;
+    padding:70px 20px;
+}
+
+.our-service-hero-inner{
+    width:100%;
+    height:auto;
+}
+
+.our-service-hero-inner h1{
+    font-size:30px;
+}
+
+.our-service-hero-inner p{
+    font-size:16px !important;
+    line-height:30px;
+}
+
+.our-services-we-thrive-div{
+    height:auto;
+    padding:60px 20px;
+}
+
+.our-services-we-thrive-div-top-1{
+    height:auto;
+    font-size:13px;
+}
+
+.our-services-we-thrive-div-top-1 h1{
+    text-align:center;
+}
+
+.our-services-we-thrive-div-top-2{
+    height:auto;
+    margin-top:40px;
+}
+
+.our-services-we-thrive-div-top-2-wrap{
+    width:100%;
+    height:auto;
+    gap:25px;
+}
+
+.our-services-we-thrive-div-top-top1-div,
+.our-services-we-thrive-div-top-top2-div{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:25px;
+    height:auto;
+}
+
+.our-services-first-box-investmentplans{
+    width:47%;
+    height:auto;
+    min-height:300px;
+}
+
+.our-services-first-box-investmentplans-wrap{
+    width:85%;
+    padding:30px 0;
+}
+
+}
+
+
+/* ===========================
+   Mobile Phones
+=========================== */
+
+@media screen and (max-width:480px){
+
+.our-service-hero{
+    min-height:65vh;
+    padding:60px 15px;
+}
+
+.our-service-hero-inner{
+    width:100%;
+}
+
+.our-service-hero-inner h1{
+    font-size:26px;
+}
+
+.our-service-hero-inner p{
+    font-size:15px !important;
+    line-height:28px;
+}
+
+.our-services-we-thrive-div{
+    height:auto;
+    padding:50px 15px;
+}
+
+.our-services-we-thrive-div-top-1{
+    height:auto;
+    font-size:11px;
+}
+
+.our-services-we-thrive-div-top-1 h1{
+    text-align:center;
+    line-height:40px;
+}
+
+.our-services-we-thrive-div-top-2{
+    height:auto;
+    margin-top:35px;
+}
+
+.our-services-we-thrive-div-top-2-wrap{
+    width:100%;
+    height:auto;
+    gap:20px;
+}
+
+.our-services-we-thrive-div-top-top1-div,
+.our-services-we-thrive-div-top-top2-div{
+    flex-direction:column;
+    height:auto;
+    gap:20px;
+}
+
+.our-services-first-box-investmentplans{
+    width:100%;
+    height:auto;
+    min-height:260px;
+}
+
+.our-services-first-box-investmentplans-wrap{
+    width:88%;
+    padding:30px 0;
+}
+
+.our-services-first-box-investmentplans-wrap h2{
+    font-size:22px;
+}
+
+.our-services-first-box-investmentplans-wrap p{
+    font-size:15px !important;
+    line-height:28px;
+}
+
+}

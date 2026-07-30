@@ -244,3 +244,313 @@
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 }
+
+/* ===========================================================
+   RESPONSIVE DESIGN
+=========================================================== */
+
+/* ==========================
+   Large Tablets
+========================== */
+
+@media screen and (max-width: 1024px){
+
+.about-us-main{
+    height: auto;
+    min-height: 50vh;
+    padding: 80px 30px;
+    background-size: cover;
+}
+
+.about-us-hero-inner{
+    width: 85%;
+    height: auto;
+}
+
+.about-us-hero-inner h1{
+    font-size: 34px;
+}
+
+.about-us-our-mission-our-vision{
+    height: auto;
+    padding: 70px 30px;
+}
+
+.about-us-our-mission-div{
+    height: auto;
+}
+
+.about-us-our-mission-div1{
+    padding-left: 50px;
+}
+
+.about-us-our-mission-div2-inner-image{
+    width: 70%;
+}
+
+.about-us-our-vision-div{
+    height: auto;
+    margin-top: 50px;
+}
+
+.about-us-our-vision-div-inner{
+    width: 90%;
+    height: auto;
+}
+
+.about-us-our-vision-div-inner h1{
+    font-size: 38px;
+}
+
+.why-choose-us-div{
+    height: auto;
+    padding: 70px 30px;
+}
+
+.why-choose-us-div-top{
+    height: auto;
+}
+
+.why-choose-us-div-top-1{
+    padding-left: 40px;
+}
+
+.why-choose-us-div-top-1 h1{
+    padding-right: 0;
+    text-align: center;
+}
+
+.why-choose-us-div-top-2-inner-image{
+    width: 80%;
+    height: auto;
+}
+
+.why-choose-us-div-btm{
+    height: auto;
+}
+
+.why-choose-us-div-btm-1-image-div{
+    width: 60%;
+}
+
+.why-choose-us-div-btm-2{
+    padding-right: 40px;
+}
+
+}
+
+
+/* ==========================
+   Tablets
+========================== */
+
+@media screen and (max-width:768px){
+
+.about-us-main{
+    min-height: 55vh;
+    padding: 70px 20px;
+}
+
+.about-us-hero-inner{
+    width: 100%;
+}
+
+.about-us-hero-inner h1{
+    font-size: 30px;
+}
+
+.about-us-hero-inner p{
+    font-size:16px !important;
+    line-height:30px;
+}
+
+.about-us-our-mission-our-vision{
+    height:auto;
+    padding:60px 20px;
+}
+
+.about-us-our-mission-div{
+    flex-direction:column;
+    height:auto;
+    gap:50px;
+}
+
+.about-us-our-mission-div1{
+    width:100%;
+    height:auto;
+    padding-left:0;
+    align-items:center;
+    text-align:center;
+}
+
+.about-us-our-mission-div2{
+    width:100%;
+    height:auto;
+}
+
+.about-us-our-mission-div2-inner-image{
+    width:60%;
+    height:auto;
+}
+
+.about-us-our-vision-div{
+    height:auto;
+    margin-top:60px;
+}
+
+.about-us-our-vision-div-inner{
+    width:100%;
+}
+
+.about-us-our-vision-div-inner h1{
+    font-size:34px;
+}
+
+.about-us-our-vision-div-inner p{
+    font-size:16px !important;
+    line-height:30px;
+}
+
+.why-choose-us-div{
+    height:auto;
+    padding:60px 20px;
+}
+
+.why-choose-us-div-top{
+    flex-direction:column;
+    height:auto;
+    gap:60px;
+}
+
+.why-choose-us-div-top-1{
+    width:100%;
+    padding-left:0;
+    text-align:center;
+    gap:20px;
+}
+
+.why-choose-us-div-top-1 h1{
+    font-size:32px;
+}
+
+.why-choose-us-div-top-2{
+    width:100%;
+    padding-top:0;
+}
+
+.why-choose-us-div-top-2-inner-image{
+    width:60%;
+    height:auto;
+}
+
+.why-choose-us-div-btm{
+    flex-direction:column;
+    height:auto;
+    gap:50px;
+    margin-top:60px;
+}
+
+.why-choose-us-div-btm-1{
+    width:100%;
+}
+
+.why-choose-us-div-btm-1-image-div{
+    width:55%;
+    height:auto;
+}
+
+.why-choose-us-div-btm-2{
+    width:100%;
+    padding-top:0;
+    padding-right:0;
+    text-align:center;
+}
+
+.why-choose-us-div-btm-2 h1{
+    font-size:34px;
+}
+
+}
+
+
+/* ==========================
+   Mobile Phones
+========================== */
+
+@media screen and (max-width:480px){
+
+.about-us-main{
+    min-height:65vh;
+    padding:60px 15px;
+}
+
+.about-us-hero-inner{
+    width:100%;
+}
+
+.about-us-hero-inner h1{
+    font-size:26px;
+}
+
+.about-us-hero-inner p{
+    font-size:15px !important;
+    line-height:28px;
+}
+
+.about-us-our-mission-our-vision{
+    padding:50px 15px;
+}
+
+.about-us-our-mission-div1 h1{
+    font-size:28px;
+}
+
+.about-us-our-mission-div1 p{
+    font-size:15px !important;
+    line-height:28px;
+}
+
+.about-us-our-mission-div2-inner-image{
+    width:80%;
+}
+
+.about-us-our-vision-div-inner h1{
+    font-size:30px;
+}
+
+.about-us-our-vision-div-inner p{
+    font-size:15px !important;
+    line-height:28px;
+}
+
+.why-choose-us-div{
+    padding:50px 15px;
+}
+
+.why-choose-us-div-top-1 h1{
+    font-size:28px;
+}
+
+.why-choose-us-div-top-1 p{
+    font-size:15px !important;
+    line-height:28px;
+}
+
+.why-choose-us-div-top-2-inner-image{
+    width:80%;
+}
+
+.why-choose-us-div-btm-1-image-div{
+    width:75%;
+}
+
+.why-choose-us-div-btm-2 h1{
+    font-size:28px;
+}
+
+.why-choose-us-div-btm-2 p{
+    font-size:15px !important;
+    line-height:28px;
+}
+
+}

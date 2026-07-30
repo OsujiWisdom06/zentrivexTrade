@@ -253,3 +253,216 @@
     font-size: 17px;
 }
 
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+========================================================== */
+
+/* ===========================
+   Small Laptop
+=========================== */
+
+@media screen and (max-width:1024px){
+
+.login-main{
+    padding:40px 20px;
+    height:auto;
+    min-height:100vh;
+}
+
+.login-main-div{
+    width:60%;
+    height:auto;
+    padding:35px 0;
+}
+
+.login-main-div-wrap{
+    height:auto;
+}
+
+.login-main-div-top{
+    height:auto;
+}
+
+.login-main-div-top1{
+    width:55%;
+    height:auto;
+}
+
+.login-main-div-top2{
+    height:auto;
+    margin-top:15px;
+}
+
+.login-main-div-btm{
+    height:auto;
+}
+
+.login-main-form{
+    height:auto;
+}
+
+.login-main-form-div-top{
+    height:auto;
+}
+
+.login-email-div,
+.login-password-div{
+    height:auto;
+    gap:10px;
+    margin-top:20px;
+}
+
+.login-input-email{
+    height:55px;
+}
+
+.input-div{
+    height:55px;
+}
+
+.login-main-form-div2-btm{
+    height:auto;
+    margin-top:30px;
+}
+
+.login-main-form-sign-in-btn{
+    height:auto;
+    margin-top:25px;
+}
+
+.login-sign-in-btn{
+    height:55px;
+}
+
+.login-main-dont-have-an-account-div{
+    height:auto;
+    margin-top:25px;
+}
+
+}
+
+
+/* ===========================
+   Tablets
+=========================== */
+
+@media screen and (max-width:768px){
+
+.login-main{
+    padding:30px 20px;
+}
+
+.login-main-div{
+    width:85%;
+}
+
+.login-main-div-top1{
+    width:60%;
+}
+
+.login-main-div-top2{
+    text-align:center;
+    font-size:15px;
+}
+
+.login-main-form-remember-me-div{
+    flex-direction:column;
+    gap:15px;
+}
+
+.login-remember-me-div,
+.login-remember-me-div2{
+    width:100%;
+    justify-content:flex-start;
+}
+
+.login-main-dont-have-an-account-div{
+    flex-direction:column;
+    gap:12px;
+    align-items:center;
+    text-align:center;
+    font-size:16px;
+}
+
+}
+
+
+/* ===========================
+   Mobile Phones
+=========================== */
+
+@media screen and (max-width:480px){
+
+.login-main{
+    padding:20px 15px;
+}
+
+.login-main-div{
+    width:100%;
+    border-radius:8px;
+    padding:30px 0;
+}
+
+.login-main-div-wrap{
+    width:90%;
+}
+
+.login-main-div-top1{
+    width:70%;
+}
+
+.login-main-div-top2{
+    font-size:14px;
+}
+
+.login-email-div,
+.login-password-div{
+    font-size:15px;
+}
+
+.login-input-email,
+.login-input{
+    font-size:15px;
+}
+
+.login-input-email{
+    height:50px;
+}
+
+.input-div{
+    height:50px;
+}
+
+.login-hide-icon{
+    padding-right:15px;
+}
+
+.password-eye{
+    font-size:18px;
+}
+
+.login-main-form-remember-me-div{
+    gap:15px;
+}
+
+.login-remember-me-div{
+    font-size:13px;
+    flex-wrap:wrap;
+}
+
+.login-remember-me-div2{
+    font-size:13px;
+}
+
+.login-sign-in-btn{
+    height:50px;
+    font-size:17px;
+}
+
+.login-main-dont-have-an-account-div{
+    font-size:15px;
+    gap:10px;
+}
+
+}
