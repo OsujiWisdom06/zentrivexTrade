@@ -2,11 +2,174 @@ import React, { useState, useEffect } from "react";
 import Sidebar from "../Component/Dashboard/Sidebar";
 import TopHeader from "../Component/TopHeader";
 import "../styles/mymarket.css";
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 
 
 const MyMarkets = () => {
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  
+  const [balance, setBalance] = useState(0);
+  
+  const [portfolio, setPortfolio] = useState([]);
+  
+  const [transactions, setTransactions] = useState([]);
+  
+  const [selectedStock, setSelectedStock] = useState(null);
+  
+  const [quantity, setQuantity] = useState(1);
+  
+  const [showModal, setShowModal] = useState(false);
+  
+  const [modalMessage, setModalMessage] = useState("");
+  
+  const stocks = [
+  {
+    symbol: "AAPL",
+    name: "Apple",
+    price: 213.54
+  },
+  {
+    symbol: "TSLA",
+    name: "Tesla",
+    price: 337.28
+  },
+  {
+    symbol: "NVDA",
+    name: "NVIDIA",
+    price: 184.91
+  },
+  {
+    symbol: "MSFT",
+    name: "Microsoft",
+    price: 531.42
+  },
+  {
+    symbol: "AMZN",
+    name: "Amazon",
+    price: 243.17
+  },
+  {
+    symbol: "META",
+    name: "Meta",
+    price: 811.35
+  }
+];
+
+const accountBalance = 0; // Replace with your user's balance later
+
+const buyStock = (stock) => {
+  const total = stock.price * quantity;
+
+  if (accountBalance <= 0 || accountBalance < total) {
+    toast.error("Insufficient funds", {
+      position: "top-center",
+      autoClose: 3000,
+    });
+    return;
+  }
+
+  setBalance((prev) => prev - total);
+
+  setPortfolio((prev) => {
+    const existing = prev.find((item) => item.symbol === stock.symbol);
+
+    if (existing) {
+      return prev.map((item) =>
+        item.symbol === stock.symbol
+          ? {
+              ...item,
+              quantity: item.quantity + quantity,
+            }
+          : item
+      );
+    }
+
+    return [...prev, { ...stock, quantity }];
+  });
+
+  setTransactions((prev) => [
+    {
+      type: "BUY",
+      symbol: stock.symbol,
+      quantity,
+      total,
+    },
+    ...prev,
+  ]);
+
+  toast.success(
+    `${quantity} ${stock.symbol} purchased successfully!`,
+    {
+      position: "top-center",
+      autoClose: 3000,
+    }
+  );
+};
+
+const sellStock = (stock) => {
+  const owned = portfolio.find(
+    (item) => item.symbol === stock.symbol
+  );
+
+  if (!owned) {
+    setModalMessage("You don't own this stock.");
+    setShowModal(true);
+    return;
+  }
+
+  if (quantity <= 0) {
+    setModalMessage("Enter a valid quantity.");
+    setShowModal(true);
+    return;
+  }
+
+  if (quantity > owned.quantity) {
+    setModalMessage("Not enough shares.");
+    setShowModal(true);
+    return;
+  }
+
+  const total = stock.price * quantity;
+
+  setBalance((prev) => prev + total);
+
+  if (quantity === owned.quantity) {
+    setPortfolio((prev) =>
+      prev.filter((item) => item.symbol !== stock.symbol)
+    );
+  } else {
+    setPortfolio((prev) =>
+      prev.map((item) =>
+        item.symbol === stock.symbol
+          ? {
+              ...item,
+              quantity: item.quantity - quantity,
+            }
+          : item
+      )
+    );
+  }
+
+  setTransactions((prev) => [
+    {
+      type: "SELL",
+      symbol: stock.symbol,
+      quantity,
+      total,
+      date: new Date().toLocaleString(),
+    },
+    ...prev,
+  ]);
+
+  setModalMessage(
+    `Successfully sold ${quantity} ${stock.symbol} share(s).`
+  );
+
+  setShowModal(true);
+};
+  
 
 
   const toggleSidebar = () => {
@@ -313,9 +476,13 @@ if (newsContainer) {
 }
 
 
+
+
   return (
 
     <div className="dashboard">
+
+        
 
 
       <Sidebar
@@ -328,6 +495,7 @@ if (newsContainer) {
       <main className="dashboard-main">
 
 
+
         <TopHeader
           toggleSidebar={toggleSidebar}
         />
@@ -336,8 +504,7 @@ if (newsContainer) {
 
         <div className="markets-container">
 
-
-
+            
           <div className="markets-header">
 
             <h2>
@@ -349,6 +516,70 @@ if (newsContainer) {
             </p>
 
           </div>
+
+            
+      <section className="market-widget">
+
+<h2>Live Stock Market</h2>
+<p style={{color: "white"}}>
+  Track the live performance of 5 of the world's most popular stocks. Monitor real-time prices, daily changes, and market trends for leading companies to stay informed about the stock market.
+</p>
+
+<div className="stock-grid">
+
+{
+
+stocks.map(stock=>(
+
+<div
+className="stock-card"
+key={stock.symbol}
+>
+
+<h3>{stock.name}</h3>
+
+<p>{stock.symbol}</p>
+
+<h2>${stock.price}</h2>
+
+<input
+
+type="number"
+
+min={1}
+
+value={quantity}
+
+onChange={(e)=>setQuantity(Number(e.target.value))}
+
+/>
+
+<div className="stock-buttons">
+
+<button
+onClick={()=>buyStock(stock)}
+>
+Buy
+</button>
+
+<button
+onClick={()=>sellStock(stock)}
+>
+Sell
+</button>
+
+</div>
+
+</div>
+
+))
+
+}
+
+</div>
+</section>
+
+
 
 
 
