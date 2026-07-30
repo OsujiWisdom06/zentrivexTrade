@@ -1,26 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../Component/Dashboard/Sidebar";
-import DashboardHeader from "../Component/Dashboard/Dashboardheader";
+import TopHeader from "../Component/TopHeader";
 import "../styles/mystocks.css";
 
 const MyStocks = () => {
+
   const navigate = useNavigate();
+
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
 
   // This will later come from your backend
   const stocks = [];
 
   return (
     <div className="dashboard">
-      <Sidebar />
+
+      <Sidebar
+        isOpen={isSidebarOpen}
+        closeSidebar={closeSidebar}
+      />
 
       <main className="dashboard-main">
-        {/* <DashboardHeader /> */}
+
+        <TopHeader
+          toggleSidebar={toggleSidebar}
+        />
 
         <div className="stocks-container">
 
           <div className="stocks-header">
             <h2>My Stocks</h2>
+
             <p>
               View and manage all your stock investments in one place.
             </p>
@@ -57,14 +76,21 @@ const MyStocks = () => {
 
               {stocks.map((stock) => (
 
-                <div className="stock-card" key={stock._id}>
+                <div
+                  className="stock-card"
+                  key={stock._id}
+                >
 
                   <div className="stock-top">
+
                     <h3>{stock.companyName}</h3>
+
                     <span>{stock.symbol}</span>
+
                   </div>
 
                   <div className="stock-info">
+
                     <p>
                       Shares:
                       <strong> {stock.quantity}</strong>
@@ -90,6 +116,7 @@ const MyStocks = () => {
                       {stock.profit >= 0 ? "+" : ""}
                       {stock.profit}%
                     </p>
+
                   </div>
 
                 </div>
@@ -103,6 +130,7 @@ const MyStocks = () => {
         </div>
 
       </main>
+
     </div>
   );
 };
