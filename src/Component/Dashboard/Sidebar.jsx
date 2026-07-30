@@ -45,7 +45,7 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
     {
       name: "Transactions",
       icon: <FaExchangeAlt />,
-      path: "/transactions",
+      path: "/transactions/history",
     },
     {
       name: "My Wallet",

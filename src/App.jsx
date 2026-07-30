@@ -19,6 +19,7 @@ import Markets from './Pages/Market'
 import MyStocks from './Pages/MyStocks'
 import DasboardInvestmentPlans from './Component/DasboardInvestmentPlans'
 import { ToastContainer } from 'react-toastify'
+import MyTransactions from './Pages/My Transaction'
 
 
 const App = () => {
@@ -54,6 +55,7 @@ const App = () => {
                   <Route path='/markets' element={< Markets/>}></Route>
                    <Route path='/my-stocks' element={<   MyStocks/>}></Route>
                    <Route path='/my-dashboard/investment-plans' element={<DasboardInvestmentPlans/>}></Route>
+                   <Route path='/transactions/history' element={ < MyTransactions />}></Route>
 
           </Routes>
         </BrowserRouter>

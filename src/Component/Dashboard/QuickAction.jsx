@@ -37,7 +37,7 @@ const QuickAction = () => {
       title: "Invest Now",
       icon: <FaChartLine />,
       color: "#f59e0b",
-      path: "/investment-plans",
+      path: "/my-dashboard/investment-plans",
     },
   ];
 
