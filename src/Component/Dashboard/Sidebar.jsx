@@ -55,7 +55,7 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
     {
       name: "Markets",
       icon: <FaChartLine />,
-      path: "/markets",
+      path: "/dashboard/my-market",
     },
     {
       name: "My Stocks",
