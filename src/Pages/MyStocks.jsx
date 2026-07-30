@@ -63,7 +63,7 @@ const MyStocks = () => {
 
               <button
                 className="browse-market-btn"
-                onClick={() => navigate("/markets")}
+                onClick={() => navigate("/dashboard/my-market")}
               >
                 Browse Market
               </button>
