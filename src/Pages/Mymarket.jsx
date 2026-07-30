@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Sidebar from "../Component/Dashboard/Sidebar";
 import TopHeader from "../Component/TopHeader";
 import "../styles/mymarket.css";
+
 
 const MyMarkets = () => {
 
@@ -16,6 +17,139 @@ const MyMarkets = () => {
   const closeSidebar = () => {
     setIsSidebarOpen(false);
   };
+
+  useEffect(() => {
+
+  const container = document.getElementById("tradingview_chart");
+
+  if(container){
+
+    container.innerHTML = "";
+
+    const script = document.createElement("script");
+
+    script.src =
+      "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
+
+    script.type = "text/javascript";
+
+    script.async = true;
+
+    script.innerHTML = `
+    {
+      "autosize": true,
+      "symbol": "NASDAQ:AAPL",
+      "interval": "D",
+      "timezone": "Etc/UTC",
+      "theme": "light",
+      "style": "1",
+      "locale": "en",
+      "allow_symbol_change": true,
+      "calendar": false,
+      "hide_side_toolbar": false,
+      "hide_top_toolbar": false,
+      "withdateranges": true,
+      "details": true,
+      "hotlist": true,
+      "studies": [
+        "STD;MACD",
+        "STD;RSI"
+      ]
+    }
+    `;
+
+    container.appendChild(script);
+
+  }
+
+
+}, []);
+
+useEffect(() => {
+
+  const container = document.getElementById("forex_market_widget");
+
+
+  if(container){
+
+    container.innerHTML = "";
+
+
+    const script = document.createElement("script");
+
+
+    script.src =
+    "https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js";
+
+
+    script.type = "text/javascript";
+
+    script.async = true;
+
+
+    script.innerHTML = `
+
+    {
+      "colorTheme": "light",
+      "dateRange": "12M",
+      "showChart": true,
+      "locale": "en",
+      "width": "100%",
+      "height": "500",
+      "largeChartUrl": "",
+      "isTransparent": false,
+
+      "showSymbolLogo": true,
+
+      "tabs": [
+        {
+          "title": "Forex",
+          "symbols": [
+
+            {
+              "s": "FX:EURUSD",
+              "d": "Euro / US Dollar"
+            },
+
+            {
+              "s": "FX:GBPUSD",
+              "d": "British Pound / US Dollar"
+            },
+
+            {
+              "s": "FX:USDJPY",
+              "d": "US Dollar / Japanese Yen"
+            },
+
+            {
+              "s": "FX:AUDUSD",
+              "d": "Australian Dollar / US Dollar"
+            },
+
+            {
+              "s": "FX:USDCAD",
+              "d": "US Dollar / Canadian Dollar"
+            },
+
+            {
+              "s": "FX:USDCHF",
+              "d": "US Dollar / Swiss Franc"
+            }
+
+          ]
+        }
+      ]
+    }
+
+    `;
+
+
+    container.appendChild(script);
+
+  }
+
+
+}, []);
 
 
   return (
@@ -63,18 +197,22 @@ const MyMarkets = () => {
 
           <div className="market-chart">
 
+<div className="market-chart">
 
-            <h3>
-              Live Market Chart
-            </h3>
+    <h3>
+      Live Market Chart
+    </h3>
 
 
-            <div className="chart-placeholder">
+    <div 
+      id="tradingview_chart"
+      className="tradingview-container"
+    >
 
-              TradingView Chart Coming Soon
+    </div>
 
-            </div>
 
+</div>
 
           </div>
 
@@ -87,16 +225,24 @@ const MyMarkets = () => {
 
           <div className="market-section">
 
-            <h3>
-              Forex Market
-            </h3>
+          {/* Forex Market */}
+
+<div className="market-section">
+
+  <h3>
+    Forex Market
+  </h3>
 
 
-            <div className="widget-placeholder">
+  <div 
+    id="forex_market_widget"
+    className="forex-widget"
+  >
 
-              Forex Market Widget
+  </div>
 
-            </div>
+
+</div>
 
           </div>
 
