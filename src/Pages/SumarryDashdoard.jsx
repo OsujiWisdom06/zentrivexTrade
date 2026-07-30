@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import Sidebar from "../Component/Dashboard/Sidebar";
-import Dashboardheader from "../Component/Dashboard/Dashboardheader";
-import "../styles/sumarrydashboard.css";
 import BalanceCard from "../Component/Dashboard/BalanceCard";
 import RecentTransactions from "../Component/Dashboard/RecentTransaction";
 import QuickAction from "../Component/Dashboard/QuickAction";
+import "../styles/sumarrydashboard.css";
+import TopHeader from "../Component/TopHeader";
 
 const SumarryDasboard = () => {
-
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
@@ -28,7 +27,7 @@ const SumarryDasboard = () => {
 
       <main className="dashboard-main">
 
-        <Dashboardheader
+        <TopHeader
           toggleSidebar={toggleSidebar}
         />
 
