@@ -148,7 +148,7 @@
 
 .signup-password-div-hide-icon-inner{
     width: 100%;
-    height: 73%;
+    height: 72%;
     background-color: white;
      border-radius: 0px 8px 8px 0px;
      display: flex;
@@ -246,6 +246,40 @@
     flex-direction: row;
     font-size: 17px;
     justify-content: center;
+}
+
+/* Password Requirements */
+.password-requirements {
+  margin: 8px 0 15px 0;
+  padding-left: 5px;
+}
+
+.password-requirements p {
+  margin: 4px 0;
+  font-size: 13px;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.valid {
+  color: #438617;   /* green when correct */
+}
+
+.invalid {
+  color: #ff4d4d;   /* red when wrong */
+}
+
+/* Password match messages */
+.match-valid {
+  color: #438617;
+  font-size: 13px;
+  margin: 6px 0 12px 5px;
+}
+
+.match-invalid {
+  color: #ff4d4d;
+  font-size: 13px;
+  margin: 6px 0 12px 5px;
 }
 
 
@@ -470,4 +504,55 @@
     gap:10px;
 }
 
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 1024px) {
+  .password-requirements p {
+    font-size: 12.5px;
+  }
+
+  .match-valid,
+  .match-invalid {
+    font-size: 12.5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .password-requirements {
+    margin: 6px 0 12px 0;
+  }
+
+  .password-requirements p {
+    font-size: 12px;
+  }
+
+  .match-valid,
+  .match-invalid {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .password-requirements p {
+    font-size: 11.5px;
+  }
+
+  .match-valid,
+  .match-invalid {
+    font-size: 11.5px;
+    margin: 5px 0 10px 3px;
+  }
+}
+
+@media (max-width: 360px) {
+  .password-requirements p {
+    font-size: 11px;
+  }
+
+  .match-valid,
+  .match-invalid {
+    font-size: 11px;
+  }
 }
