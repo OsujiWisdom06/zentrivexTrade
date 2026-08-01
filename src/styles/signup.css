@@ -118,6 +118,7 @@
     border: none;
     outline: none;
     padding-left: 10px;
+    /* background-color: blue; */
     border-radius: 8px 0px 0px 8px;
     font-size: 18px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -128,6 +129,7 @@
     height: 100%;
     /* background-color: red; */
     justify-content: center;
+    padding-top: 1px;
     display: flex;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     flex-direction: column;
@@ -138,7 +140,8 @@
     height: 100%;
     display: flex;
     justify-content: end;
-    /* background-color: white; */
+    /* background-color: tomato; */
+    padding-bottom: 2px;
     align-items: center;
     display: flex;
     justify-content: center;
@@ -187,7 +190,7 @@
     outline: none;
 }
 
-.signup-confirm-hide-icon-div{
+.signup-confirm-hide-icon-div, .signup-password-div-hide-icon{
     width: 20%;
     height: 100%;
     /* background-color: yellow; */
@@ -423,6 +426,15 @@
     font-size:16px;
 }
 
+.signup-password-div-hide-icon-inner{
+    /* background-color: red; */
+    height: 100%;
+}
+
+.signup-confirm-hide-icon-div, .signup-password-div-hide-icon{
+    padding-bottom: 2px;
+}
+
 }
 
 
@@ -502,6 +514,10 @@
 .sign-up-btm-alreadt-text{
     font-size:15px;
     gap:10px;
+}
+
+.signup-confirm-hide-icon-div, .signup-password-div-hide-icon{
+    padding-bottom: 2px;
 }
 
 }
