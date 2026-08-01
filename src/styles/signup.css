@@ -431,8 +431,12 @@
     height: 100%;
 }
 
-.signup-confirm-hide-icon-div, .signup-password-div-hide-icon{
-    padding-bottom: 2px;
+ .signup-password-div-hide-icon{
+    padding-bottom: 2.5px;
+}
+
+.signup-confirm-hide-icon-div{
+    padding-bottom: 3px;
 }
 
 }
@@ -516,8 +520,12 @@
     gap:10px;
 }
 
-.signup-confirm-hide-icon-div, .signup-password-div-hide-icon{
-    padding-bottom: 2px;
+ .signup-password-div-hide-icon{
+    padding-bottom: 2.5px;
+}
+
+.signup-confirm-hide-icon-div{
+    padding-bottom: 3px;
 }
 
 }
