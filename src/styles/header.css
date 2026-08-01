@@ -234,11 +234,10 @@
 }
 
 .header-write-up-div-main-div4 {
-  display: none;          /* still hidden on desktop */
+  display: none;                /* Hidden on desktop */
   color: white !important;
   font-size: 32px;
   cursor: pointer;
-  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -323,20 +322,17 @@
 /* =======================
    MOBILE MENU STYLES
 ======================= */
-
+/* Mobile menu is completely hidden by default (on desktop & when closed) */
 .mobile-menu-overlay {
+  display: none;
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.55);
   z-index: 9998;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
 }
 
 .mobile-menu-overlay.open {
-  opacity: 1;
-  visibility: visible;
+  display: block;   /* shows only when open */
 }
 
 .mobile-menu {
@@ -509,5 +505,31 @@
 
   .mobile-menu {
     width: 280px;
+  }
+}
+
+/* Tablets & below (max 1024px) */
+@media (max-width: 1024px) {
+  .header-write-up-div-main-div1,
+  .header-write-up-div-main-div2 {
+    display: none !important;
+  }
+
+  .header-write-up-div-main-div4 {
+    display: flex !important;
+  }
+
+  .header-logo-div {
+    width: 170px;
+  }
+
+  .header-write-up-div {
+    width: auto;
+    margin-left: auto;
+  }
+
+  .header-write-up-div-main {
+    width: auto;
+    justify-content: flex-end;
   }
 }
