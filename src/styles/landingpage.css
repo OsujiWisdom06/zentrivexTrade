@@ -1007,25 +1007,82 @@
     width:100%;
 }
 
+}
+
+/* =======================
+   TABLETS & MOBILE
+======================= */
+@media screen and (max-width:768px){
+
 .trusted-by-investors-div-3{
     height:auto;
     margin-top:40px;
+    padding:0 20px;
 }
 
 .trusted-by-investors-div-3-inner{
-    width:95%;
+    width:100%;
     min-height:420px;
+    padding:30px 20px;
+}
+
+.trusted-by-investors-div-3-inner-wrap{
+    width:100%;
+    height:auto;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    gap:25px;
+}
+
+.trusted-by-investors-div-3-inner-wrap-div1{
+    height:auto;
+}
+
+.trusted-by-investors-div-3-inner-wrap-div2{
+    height:auto;
+    line-height:30px;
+    font-size:17px;
+    padding:10px 0;
+}
+
+.trusted-by-investors-div-3-inner-wrap-div3{
+    height:auto;
+    justify-content:flex-start;
 }
 
 .trusted-by-investors-div-3-inner-wrap-div3-inner-main{
     width:100%;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    gap:15px;
 }
 
+.trusted-by-investors-div-3-inner-wrap-div3-inner-main-image-div{
+    width:65px;
+    height:65px;
+    flex-shrink:0;
+}
 
-/* Images */
+.trusted-by-investors-div-3-inner-wrap-div3-inner-main-image-div img{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    object-fit:cover;
+}
 
-img{
-    max-width:100%;
+.trusted-by-investors-div-3-inner-wrap-div3-inner-main-name-div{
+    width:auto;
+    height:auto;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.trusted-by-investors-div-3-inner-wrap-div3-inner-main-name-div-top1,
+.trusted-by-investors-div-3-inner-wrap-div3-inner-main-name-div-top2{
+    padding-left:0;
     height:auto;
 }
 
@@ -1056,17 +1113,67 @@ img{
     height:320px !important;
 }
 
+.start-investing-btn,
+.view-market-btn{
+    font-size:18px;
+}
+
+}
+
+@media screen and (max-width:480px){
+
+.trusted-by-investors-div-3{
+    padding:0 15px;
+}
+
 .trusted-by-investors-div-3-inner{
+    width:100%;
     min-height:460px;
+    padding:25px 18px;
+}
+
+.trusted-by-investors-div-3-inner-wrap{
+    width:100%;
+    gap:22px;
 }
 
 .trusted-by-investors-div-3-inner-wrap-div2{
     font-size:16px;
+    line-height:28px;
 }
 
-.start-investing-btn,
-.view-market-btn{
-    font-size:18px;
+.trusted-by-investors-div-3-inner-wrap-div3-inner-main{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    gap:12px;
+}
+
+.trusted-by-investors-div-3-inner-wrap-div3-inner-main-image-div{
+    width:55px;
+    height:55px;
+    flex-shrink:0;
+}
+
+.trusted-by-investors-div-3-inner-wrap-div3-inner-main-image-div img{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.trusted-by-investors-div-3-inner-wrap-div3-inner-main-name-div{
+    width:auto;
+}
+
+.trusted-by-investors-div-3-inner-wrap-div3-inner-main-name-div-top1{
+    font-size:16px;
+    padding-left:0;
+}
+
+.trusted-by-investors-div-3-inner-wrap-div3-inner-main-name-div-top2{
+    font-size:13px;
+    padding-left:0;
 }
 
 }
