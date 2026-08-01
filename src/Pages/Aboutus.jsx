@@ -35,7 +35,7 @@ const Aboutus = () => {
           <div className='about-us-our-vision-div'>
             <div className='about-us-our-vision-div-inner'>
               <h1>Our Story</h1>
-              <p  style={{fontSize: "17px"}}>TradeLocker was created by a group of financial experts and tech innovators who recognized a gap in the market
+              <p  style={{fontSize: "17px"}}>ZentrivexTrade was created by a group of financial experts and tech innovators who recognized a gap in the market
                  for a reliable, user-friendly investment platform. Over the years, we've grown into a trusted name in the investment industry, 
                  serving individuals and companies across the globe. Our commitment to innovation 
                 and transparency sets us apart, and we continue to evolve to meet the changing needs of the financial world.</p>

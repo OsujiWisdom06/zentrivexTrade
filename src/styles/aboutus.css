@@ -305,6 +305,8 @@
 .why-choose-us-div{
     height: auto;
     padding: 70px 30px;
+    display: flex;
+    flex-direction: column;
 }
 
 .why-choose-us-div-top{
@@ -414,6 +416,8 @@
 .why-choose-us-div{
     height:auto;
     padding:60px 20px;
+     display: flex;
+    flex-direction: column;
 }
 
 .why-choose-us-div-top{
@@ -525,6 +529,8 @@
 
 .why-choose-us-div{
     padding:50px 15px;
+     display: flex;
+    flex-direction: column;
 }
 
 .why-choose-us-div-top-1 h1{
