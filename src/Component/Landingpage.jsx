@@ -387,7 +387,7 @@ useEffect(() => {
         ref={chartRef}
         style={{ 
           width: "85%",
-          height: "63vh",
+          height: "60vh",
           margin: "0 auto", }} >
         <div
           className="tradingview-widget-container__widget"
