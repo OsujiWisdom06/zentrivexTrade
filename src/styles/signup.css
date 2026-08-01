@@ -141,7 +141,7 @@
     display: flex;
     justify-content: end;
     /* background-color: tomato; */
-    padding-bottom: 2px;
+    /* padding-bottom: 2px; */
     align-items: center;
     display: flex;
     justify-content: center;
@@ -432,7 +432,7 @@
 }
 
 .signup-confirm-hide-icon-div, .signup-password-div-hide-icon{
-    padding-bottom: 2px;
+    padding-bottom: 3px;
 }
 
 }
@@ -517,7 +517,7 @@
 }
 
 .signup-confirm-hide-icon-div, .signup-password-div-hide-icon{
-    padding-bottom: 2px;
+    padding-bottom: 3px;
 }
 
 }
