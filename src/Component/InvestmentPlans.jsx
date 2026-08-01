@@ -2,8 +2,11 @@ import React from 'react'
 import "../styles/investmentplans.css"
 import { MdVerified } from 'react-icons/md'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const InvestmentPlans = () => {
+
+  const nav = useNavigate()
 
   const [selectedPlan, setSelectedPlan] = useState(null);
 const [investmentAmount, setInvestmentAmount] = useState("");
@@ -17,14 +20,15 @@ const plans = [
     returns: "15% Every Week",
     total: "750% + Capital",
   },
-  {
-    name: "Pro Plan",
-    min: 10000,
-    max: 49999,
-    duration: "30 Days",
-    returns: "35% Every Day",
-    total: "1050% + Capital",
-  },
+{
+  name: "Pro Plan",
+  recommended: true,
+  min: 10000,
+  max: 49999,
+  duration: "30 Days",
+  returns: "35% Every Day",
+  total: "1050% + Capital",
+},
   {
     name: "Premium Plan",
     min: 50000,
@@ -45,9 +49,8 @@ const plans = [
 
 const accountBalance = 0; // Replace with logged-in user's balance
 
-const openPlan = (plan) => {
-  setSelectedPlan(plan);
-  setInvestmentAmount("");
+const openPlan = () => {
+  nav("/login");
 };
 
 const closeModal = () => {
@@ -171,23 +174,23 @@ selectedPlan && (
 
         </div>
 
-        <div className="investment-modal-footer">
-<button
-    className="close-modal-btn"
-    onClick={closeModal}
->
-    Cancel
-</button>
+<div className="investment-modal-footer">
+    <button
+        className="close-modal-btn"
+        onClick={closeModal}
+        type="button"
+    >
+        Cancel
+    </button>
 
-            <button
-            className="submit-btn"
-            onClick={submitInvestment}
-            >
-                Submit Investment
-            </button>
-
-        </div>
-
+    <button
+        className="submit-btn"
+        onClick={submitInvestment}
+        type="button"
+    >
+        Submit
+    </button>
+</div>
     </div>
 
 </div>
@@ -215,36 +218,46 @@ selectedPlan && (
             <div className='investment-card-1-btm'>
               <div
   className='investment-select-package-div'
-  onClick={() => openPlan(plans[0])}
+ onClick={openPlan}
 >
   Select Package
 </div>
             </div>
             </div>
           </div>
-            <div className='investment-card-1'>
-            <div className='investment-card-1-wrap'>
-               <div className='investment-card-1-top'>
-                <h2 style={{color: "#144da6"}}>Pro Plan</h2>
-                <p>Return: 35% Every Day</p>
-                <h2 style={{color: "#144da6"}}>$10,000 - $49,999</h2>
-               </div>
-            <div className='investment-card-1-middle'>
-              <p><MdVerified style={{color: "#144da6"}}/>Duration: For 30 Days</p>
-              <p><MdVerified style={{color: "#144da6"}}/>Total: 1050% + Capital</p>
-              <p><MdVerified style={{color: "#144da6"}}/>Min: $10,000</p>
-              <p><MdVerified style={{color: "#144da6"}}/>Max: $49,999</p>
-            </div>
-            <div className='investment-card-1-btm'>
-              <div
-  className='investment-select-package-div'
-  onClick={() => openPlan(plans[1])}
->
-  Select Package
+    <div className='investment-card-1 recommended-card'>
+
+  <div className="recommended-badge">
+    ⭐ Recommended
+  </div>
+
+  <div className='investment-card-1-wrap'>
+
+    <div className='investment-card-1-top'>
+      <h2 style={{color: "#144da6"}}>Pro Plan</h2>
+      <p>Return: 35% Every Day</p>
+      <h2 style={{color: "#144da6"}}>$10,000 - $49,999</h2>
+    </div>
+
+    <div className='investment-card-1-middle'>
+      <p><MdVerified style={{color:"#144da6"}}/>Duration: For 30 Days</p>
+      <p><MdVerified style={{color:"#144da6"}}/>Total: 1050% + Capital</p>
+      <p><MdVerified style={{color:"#144da6"}}/>Min: $10,000</p>
+      <p><MdVerified style={{color:"#144da6"}}/>Max: $49,999</p>
+    </div>
+
+    <div className='investment-card-1-btm'>
+      <div
+        className='investment-select-package-div'
+        onClick={openPlan}
+      >
+        Select Package
+      </div>
+    </div>
+
+  </div>
+
 </div>
-            </div>
-            </div>
-          </div>
             <div className='investment-card-1'>
             <div className='investment-card-1-wrap'>
                <div className='investment-card-1-top'>
@@ -261,7 +274,7 @@ selectedPlan && (
             <div className='investment-card-1-btm'>
               <div
   className='investment-select-package-div'
-  onClick={() => openPlan(plans[2])}
+  onClick={openPlan}
 >
   Select Package
 </div>
@@ -284,7 +297,7 @@ selectedPlan && (
             <div className='investment-card-1-btm'>
              <div
   className='investment-select-package-div'
-  onClick={() => openPlan(plans[3])}
+ onClick={openPlan}
 >
   Select Package
 </div>

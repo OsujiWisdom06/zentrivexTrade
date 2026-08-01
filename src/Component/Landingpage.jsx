@@ -383,7 +383,7 @@ useEffect(() => {
                     <div className='live-data-market-div-2-main'>
                           <div className="live-data-market-div-2-main">
       <div
-        className="tradingview-widget-container"
+        className="dingviewtra-widget-container"
         ref={chartRef}
         style={{
           width: "60%",

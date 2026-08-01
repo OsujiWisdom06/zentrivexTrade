@@ -5,6 +5,7 @@ import RecentTransactions from "../Component/Dashboard/RecentTransaction";
 import QuickAction from "../Component/Dashboard/QuickAction";
 import "../styles/sumarrydashboard.css";
 import TopHeader from "../Component/TopHeader";
+import DasboardInvestmentPlans from "../Component/DasboardInvestmentPlans";
 
 const SumarryDasboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);

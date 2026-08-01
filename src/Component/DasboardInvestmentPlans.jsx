@@ -27,43 +27,53 @@ const DasboardInvestmentPlans = () => {
   };
 
 
-  const plans = [
-    {
-      name: "Basic Plan",
-      min: 500,
-      max: 9999,
-      duration: "30 Days",
-      returns: "15% Every Week",
-      total: "750% + Capital",
-    },
+const plans = [
+{
+  name: "Basic Plan",
+  min: 500,
+  max: 9999,
+  durationDays: "30 Days",
+  frequency: "day",
+  duration: "30 Days",
+  returns: "10% Every Day",
+  total: "300% + Capital",
+},
+{
+  name: "Pro Plan",
+  recommended: true,
+  min: 10000,
+  max: 49999,
+  durationDays: "30 Days",
+  percentage: 35,
+  frequency: "day",
+  duration: "30 Days",
+  returns: "35% Every Day",
+  total: "1050% + Capital",
+},
 
-    {
-      name: "Pro Plan",
-      min: 10000,
-      max: 49999,
-      duration: "30 Days",
-      returns: "35% Every Day",
-      total: "1050% + Capital",
-    },
-
-    {
-      name: "Premium Plan",
-      min: 50000,
-      max: 99999,
-      duration: "3 Months",
-      returns: "5% Every Day",
-      total: "1500% + Capital",
-    },
-
-    {
-      name: "Retirement Plan",
-      min: 100000,
-      max: Infinity,
-      duration: "30 Days",
-      returns: "50% Every Day",
-      total: "5000% + Capital",
-    },
-  ];
+  {
+    name: "Premium Plan",
+    min: 50000,
+    max: 99999,
+    durationDays: "3 Months",
+    percentage: 5,
+    frequency: "day",
+    duration: "3 Months",
+    returns: "5% Every Day",
+    total: "1500% + Capital",
+  },
+  {
+    name: "Retirement Plan",
+    min: 100000,
+    max: Infinity,
+    durationDays: "30 Days",
+    percentage: 50,
+    frequency: "day",
+     duration: "30 Days",
+    returns: "50% Every Day",
+    total: "5000% + Capital",
+  },
+];
 
 
 
@@ -146,6 +156,27 @@ const submitInvestment = () => {
   closeModal();
 
 };
+const amount = Number(investmentAmount) || 0;
+
+let investmentReward = 0;
+
+if (selectedPlan && amount > 0) {
+  if (selectedPlan.frequency === "day") {
+    investmentReward =
+      amount *
+      (selectedPlan.percentage / 100) *
+      selectedPlan.durationDays;
+  } else {
+    const weeks = Math.floor(selectedPlan.durationDays / 7);
+    investmentReward =
+      amount *
+      (selectedPlan.percentage / 100) *
+      weeks;
+  }
+}
+
+const totalReturns = amount + investmentReward;
+
 
 
 
@@ -211,11 +242,15 @@ const submitInvestment = () => {
               plans.map((plan,index)=>(
 
 
-                <div 
-                  className="plan-card"
-                  key={index}
-                >
-
+               <div
+  className="plan-card"
+  key={index}
+>
+ {plan.recommended && (
+  <div className="recommended-badge">
+    ⭐ Recommended
+  </div>
+)}
 
                   <h3>
                     {plan.name}
@@ -442,13 +477,34 @@ const submitInvestment = () => {
 
                   </div>
 
+                  
+                <div className="investment-info-card">
+  <span>Investment Reward</span>
+
+  <h3 style={{ color: "#16a34a" }}>
+    ${investmentReward.toLocaleString()}
+  </h3>
+</div>
+
+<div className="investment-info-card">
+  <span>Investment Reward</span>
+
+  <h3 style={{ color: "#16a34a" }}>
+    ${investmentReward.toLocaleString()}
+  </h3>
+</div>
+
+<div className="investment-info-card">
+  <span>Total Returns (Capital + Profit)</span>
+
+  <h3 style={{ color: "#144da6" }}>
+    ${totalReturns.toLocaleString()}
+  </h3>
+</div>
+
 
 
                 </div>
-
-
-
-
 
 
 

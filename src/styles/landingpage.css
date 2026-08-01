@@ -37,11 +37,6 @@
   height: 100%;
 }
 
-.tradingview-widget-container__widget {
-  width: 100%;
-  height: 100%;
-}
-
 .landing-hero-page{
     width: 100%;
     height: 100vh;
@@ -900,11 +895,10 @@
     height:auto;
 }
 
-.tradingview-widget-container{
+.live-data-market-div .tradingview-widget-container{
     width:100% !important;
     height:400px !important;
 }
-
 
 /* Why Section */
 
@@ -1109,7 +1103,7 @@
     font-size:25px !important;
 }
 
-.tradingview-widget-container{
+.live-data-market-div .tradingview-widget-container{
     height:320px !important;
 }
 

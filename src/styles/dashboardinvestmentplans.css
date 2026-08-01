@@ -61,7 +61,7 @@
 
 
 .plan-card{
-
+    position: relative;
     width:100%;
     min-height:350px;
     background:#9dc3fe;
@@ -72,7 +72,28 @@
     justify-content:space-between;
     transition:.3s;
     box-sizing:border-box;
+    overflow:hidden;
+}
 
+/* ==========================
+   Recommended Badge
+========================== */
+
+.recommended-badge{
+    position:absolute;
+    top:15px;
+    right:-38px;
+    width:150px;
+    padding:7px 0;
+    background: #16a34a;
+    color:#fff;
+    text-align:center;
+    font-size:12px;
+    font-weight:700;
+    transform:rotate(45deg);
+    box-shadow:0 4px 10px rgba(0,0,0,.2);
+    letter-spacing:.5px;
+    z-index:2;
 }
 
 
@@ -404,6 +425,33 @@ transform:translateY(0) scale(1);
 
 }
 
+.investment-info-card:last-child {
+    border: 2px solid #16a34a;
+    background: #f0fdf4;
+}
+
+.investment-info-card:last-child span {
+    color: #15803d;
+    font-weight: 600;
+}
+
+.investment-info-card:last-child h3 {
+    color: #16a34a;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+@media (max-width:768px){
+
+    .recommended-badge{
+        width:135px;
+        right:-35px;
+        font-size:12px;
+        padding:6px 0;
+    }
+
+}
+
 
 
 
@@ -613,5 +661,44 @@ transform:translateY(0) scale(1);
 
 }
 
+
+}
+
+/* ==========================
+   Investment Reward Card
+========================== */
+
+@media (max-width: 768px) {
+
+    .investment-info-card:last-child {
+        padding: 16px;
+        border-radius: 10px;
+    }
+
+    .investment-info-card:last-child span {
+        font-size: 14px;
+    }
+
+    .investment-info-card:last-child h3 {
+        font-size: 20px;
+        word-break: break-word;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .investment-info-card:last-child {
+        padding: 14px;
+    }
+
+    .investment-info-card:last-child span {
+        font-size: 13px;
+    }
+
+    .investment-info-card:last-child h3 {
+        font-size: 18px;
+        line-height: 1.4;
+    }
 
 }

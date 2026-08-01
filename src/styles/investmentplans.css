@@ -165,13 +165,7 @@
     align-items:center;
 }
 
-.close-modal-btn{
-    border:none;
-    background:none;
-    color:#fff;
-    font-size:22px;
-    cursor:pointer;
-}
+
 .investment-modal-body {
     padding: 25px;
     display: grid;
@@ -210,39 +204,40 @@
     padding:0 15px;
     font-size:16px;
 }
-.investment-modal-footer {
-    display: flex;
-    gap: 15px;
-    padding: 20px 25px;
-    border-top: 1px solid #eee;
-    background: white;
-
-    flex-shrink: 0; /* Keep footer visible */
+.investment-modal-footer{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    padding:20px 25px;
+    border-top:1px solid #eee;
+    background:#fff;
 }
 
+.close-modal-btn,
 .submit-btn{
     flex:1;
+    width:0;
+    min-width:0;
     height:50px;
     border:none;
     border-radius:10px;
     font-size:16px;
+    font-weight:600;
     cursor:pointer;
-    transition:.3s;
 }
-.close-modal-btn {
-    flex: 1 !important;
-    height: 50px !important;
-    background: #dc3545 !important;
-    color: #ffffff !important;
-    border: none !important;
-    border-radius: 10px !important;
-    font-size: 16px !important;
-    font-weight: 600 !important;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.close-modal-btn{
+    background:#dc3545;
+    color:#fff;
 }
+
+.submit-btn{
+    background:#144da6;
+    color:#fff;
+}
+
 
 .close-modal-btn:hover {
     background: #bb2d3b !important;
@@ -251,10 +246,6 @@
     background-color: #bb2d3b;
 }
 
-.submit-btn{
-    background:#144da6;
-    color:white;
-}
 
 .submit-btn:hover{
     background:#0e3a80;
@@ -262,6 +253,52 @@
 
 .cancel-btn:hover{
     background:#ddd;
+}
+
+/* Recommended Plan */
+
+.recommended-card{
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #f59e0b;
+}
+
+.recommended-badge{
+    position: absolute;
+    top: 15px;
+    right: -38px;
+    width: 150px;
+    background: linear-gradient(135deg,#f59e0b,#facc15);
+    color: #fff;
+    text-align: center;
+    padding: 7px 0;
+    font-size: 13px;
+    font-weight: 700;
+    transform: rotate(45deg);
+    box-shadow: 0 4px 10px rgba(0,0,0,.25);
+    z-index: 10;
+    letter-spacing: .5px;
+}
+
+@media (max-width:768px){
+
+    .recommended-badge{
+        width:130px;
+        right:-34px;
+        font-size:12px;
+        padding:6px 0;
+    }
+
+}
+
+@media (max-width:480px){
+
+    .recommended-badge{
+        width:120px;
+        right:-32px;
+        font-size:11px;
+    }
+
 }
 
 /* ==========================================================
@@ -426,10 +463,10 @@
         font-size:17px;
     }
 
+
 }
 
 
-/* ---------- Modal ---------- */
 
 @media screen and (max-width:768px){
 
@@ -451,16 +488,42 @@
     }
 
     .investment-modal-footer{
-        flex-direction:column;
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
         padding:18px;
     }
 
     .submit-btn,
     .close-modal-btn{
-        width:100%;
+        flex: 1;
+        width: auto;
+        height: 50px;
     }
 
     .investment-input-div input{
+        height:50px;
+    }
+
+}
+
+    .investment-input-div input{
+        height:50px;
+    }
+
+
+    @media (max-width:768px){
+
+    .investment-modal-footer{
+        display:flex;
+        flex-direction:row;
+        gap:10px;
+    }
+
+    .cancel-investment-btn,
+    .submit-btn{
+        flex:1;
+        width:auto;
         height:50px;
     }
 
