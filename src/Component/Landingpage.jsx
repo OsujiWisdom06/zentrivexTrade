@@ -6,9 +6,12 @@ import { useEffect, useRef } from "react";
 import { useState } from 'react';
 import { TiStar } from 'react-icons/ti';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 
 const Landingpage = () => {
+
+  const nav = useNavigate();
 
     const testimonials = [
   {
@@ -367,8 +370,8 @@ useEffect(() => {
 </div>
                 <div className='landing-hero-page-div-4'>
                     <div className='hero-div-start-investing'>
-                        <button className='start-investing-btn'>Start Investing</button>
-                        <button className='view-market-btn'>View Market</button>
+                        <button onClick={()=>nav("/login")} className='start-investing-btn'>Start Investing</button>
+                        <button onClick={()=>nav("/market-overview")} className='view-market-btn'>View Market</button>
                     </div>
                 </div>
             </div>

@@ -233,16 +233,19 @@
 
 }
 
-.header-write-up-div-main-div4{
-    width: 10%;
-    height: 100%;
-    /* background-color: orangered; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    color: white;
-    display: none;
+.header-write-up-div-main-div4 {
+  display: none;          /* still hidden on desktop */
+  color: white !important;
+  font-size: 32px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-write-up-div-main-div4 svg {
+  color: white !important;
+  fill: white !important;
 }
 
 /* =======================
@@ -315,4 +318,196 @@
         opacity: 1;
         transform: translateY(0) scale(1);
     }
+}
+
+/* =======================
+   MOBILE MENU STYLES
+======================= */
+
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 9998;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  max-width: 85%;
+  height: 100vh;
+  background: #111;
+  z-index: 9999;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  padding: 25px 20px;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.4);
+}
+
+.mobile-menu.open {
+  transform: translateX(0);
+}
+
+/* Close Button */
+.mobile-menu-close {
+  align-self: flex-end;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: 0.25s;
+}
+
+.mobile-menu-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Links */
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.mobile-menu-links > p,
+.mobile-features p {
+  color: #ddd;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 12px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.25s;
+  margin: 0;
+}
+
+.mobile-menu-links > p:hover,
+.mobile-features p:hover {
+  background: rgba(67, 134, 23, 0.2);
+  color: #438617;
+}
+
+.mobile-features {
+  margin: 10px 0;
+  padding-left: 8px;
+  border-left: 3px solid #438617;
+}
+
+.mobile-features-title {
+  color: #438617 !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  margin-bottom: 6px !important;
+  cursor: default !important;
+}
+
+.mobile-features-title:hover {
+  background: transparent !important;
+}
+
+/* Auth buttons at the bottom */
+.mobile-auth {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+}
+
+.mobile-login,
+.mobile-register {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: 0.25s;
+}
+
+.mobile-login {
+  background: transparent;
+  color: white;
+  border: 1.5px solid #555;
+}
+
+.mobile-login:hover {
+  border-color: #438617;
+  color: #438617;
+}
+
+.mobile-register {
+  background: #438617;
+  color: white;
+}
+
+.mobile-register:hover {
+  background: #367012;
+  transform: scale(1.02);
+}
+
+/* =======================
+   RESPONSIVE BREAKPOINTS
+======================= */
+
+@media (max-width: 950px) {
+  .header-write-up-div-main-div1,
+  .header-write-up-div-main-div2 {
+    display: none !important;
+  }
+
+  .header-write-up-div-main-div4 {
+    display: flex !important;
+  }
+
+  .header-logo-div {
+    width: 160px;
+  }
+
+  .header-write-up-div {
+    width: auto;
+    margin-left: auto;
+  }
+
+  .header-write-up-div-main {
+    width: auto;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-logo-div {
+    width: 130px;
+  }
+
+  .mobile-menu {
+    width: 280px;
+  }
 }
