@@ -305,8 +305,6 @@
 .why-choose-us-div{
     height: auto;
     padding: 70px 30px;
-    display: flex;
-    flex-direction: column;
 }
 
 .why-choose-us-div-top{
@@ -416,14 +414,13 @@
 .why-choose-us-div{
     height:auto;
     padding:60px 20px;
-     display: flex;
-    flex-direction: column;
 }
 
 .why-choose-us-div-top{
-    flex-direction:column;
-    height:auto;
-    gap:60px;
+    display: flex;
+    flex-direction: column-reverse;
+    height: auto;
+    gap: 50px;
 }
 
 .why-choose-us-div-top-1{
@@ -529,8 +526,6 @@
 
 .why-choose-us-div{
     padding:50px 15px;
-     display: flex;
-    flex-direction: column;
 }
 
 .why-choose-us-div-top-1 h1{
@@ -540,10 +535,6 @@
 .why-choose-us-div-top-1 p{
     font-size:15px !important;
     line-height:28px;
-}
-
-.why-choose-us-div-top-2-inner-image{
-    width:80%;
 }
 
 .why-choose-us-div-btm-1-image-div{
@@ -557,6 +548,34 @@
 .why-choose-us-div-btm-2 p{
     font-size:15px !important;
     line-height:28px;
+}
+
+.why-choose-us-div-top{
+    display: flex;
+    flex-direction: column-reverse;
+    height: auto;
+    gap: 40px;
+}
+
+.why-choose-us-div-top-1{
+    width: 100%;
+    padding: 0;
+    text-align: center;
+}
+
+.why-choose-us-div-top-2{
+    width: 100%;
+    padding-top: 0;
+}
+
+.why-choose-us-div-top-2-inner-image{
+    width: 80%;
+    height: auto;
+}
+
+.why-choose-us-div-top-2-inner-image img{
+    width: 100%;
+    height: auto;
 }
 
 }

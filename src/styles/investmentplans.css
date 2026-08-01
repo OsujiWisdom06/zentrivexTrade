@@ -263,3 +263,205 @@
 .cancel-btn:hover{
     background:#ddd;
 }
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+========================================================== */
+
+/* ---------- Large Tablets ---------- */
+
+@media screen and (max-width: 1024px) {
+
+    .investmentplans{
+        height: auto;
+        padding: 60px 0;
+    }
+
+    .investment-plan-top{
+        height: auto;
+        padding-bottom: 40px;
+        text-align: center;
+    }
+
+    .investment-plan-top h1{
+        font-size: 32px !important;
+    }
+
+    .investment-plan-btm{
+        height: auto;
+        padding-bottom: 0;
+    }
+
+    .investment-plan-btm-wrap{
+        width: 95%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+    }
+
+    .investment-card-1{
+        width: 47%;
+        height: auto;
+        min-height: 520px;
+    }
+
+    .investment-card-1-wrap{
+        padding: 20px 0;
+    }
+
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media screen and (max-width:768px){
+
+    .investmentplans{
+        height:auto;
+        padding:60px 0;
+    }
+
+    .investment-plan-top{
+        height:auto;
+        text-align:center;
+        padding:0 20px 40px;
+    }
+
+    .investment-plan-top h1{
+        font-size:28px !important;
+    }
+
+    .investment-plan-top p{
+        font-size:16px !important;
+    }
+
+    .investment-plan-btm{
+        height:auto;
+    }
+
+    .investment-plan-btm-wrap{
+        width:92%;
+        flex-direction:column;
+        align-items:center;
+        gap:25px;
+    }
+
+    .investment-card-1{
+        width:100%;
+        height:auto;
+        min-height:500px;
+    }
+
+    .investment-card-1-wrap{
+        height:auto;
+        padding:25px 0;
+    }
+
+    .investment-card-1-top{
+        height:auto;
+        gap:12px;
+    }
+
+    .investment-card-1-top h2{
+        font-size:26px;
+    }
+
+    .investment-card-1-middle{
+        height:auto;
+        margin:30px 0;
+        font-size:18px;
+        gap:18px;
+    }
+
+    .investment-card-1-btm{
+        height:auto;
+        margin-top:15px;
+    }
+
+    .investment-select-package-div{
+        height:55px;
+        font-size:18px;
+    }
+
+}
+
+
+/* ---------- Small Phones ---------- */
+
+@media screen and (max-width:480px){
+
+    .investmentplans{
+        padding:50px 0;
+    }
+
+    .investment-plan-top{
+        padding:0 15px 35px;
+    }
+
+    .investment-plan-top h1{
+        font-size:24px !important;
+    }
+
+    .investment-plan-top p{
+        font-size:15px !important;
+    }
+
+    .investment-card-1{
+        border-radius:12px;
+    }
+
+    .investment-card-1-wrap{
+        width:90%;
+    }
+
+    .investment-card-1-top h2{
+        font-size:22px;
+    }
+
+    .investment-card-1-middle{
+        font-size:16px;
+    }
+
+    .investment-select-package-div{
+        font-size:17px;
+    }
+
+}
+
+
+/* ---------- Modal ---------- */
+
+@media screen and (max-width:768px){
+
+    .investment-modal{
+        width:95%;
+        max-height:90vh;
+    }
+
+    .investment-modal-header{
+        padding:18px;
+    }
+
+    .investment-modal-header h2{
+        font-size:22px;
+    }
+
+    .investment-modal-body{
+        padding:18px;
+    }
+
+    .investment-modal-footer{
+        flex-direction:column;
+        padding:18px;
+    }
+
+    .submit-btn,
+    .close-modal-btn{
+        width:100%;
+    }
+
+    .investment-input-div input{
+        height:50px;
+    }
+
+}

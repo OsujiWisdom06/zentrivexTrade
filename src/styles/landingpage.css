@@ -750,3 +750,323 @@
     font-size: 13px;
     padding-left: 15px;
 }
+
+/* ===========================================
+   RESPONSIVE DESIGN
+=========================================== */
+
+/* ---------------------- Tablets ---------------------- */
+@media screen and (max-width: 1024px) {
+
+    .landing-hero-page-wrap,
+    .live-data-market-div-wrap{
+        width:90%;
+    }
+
+    .why-zentrivex-trade-div-1-wrap{
+        width:80%;
+    }
+
+    .trusted-by-investors-div-1-inner{
+        width:70%;
+    }
+
+    .trusted-by-investors-div-2-inner{
+        width:90%;
+    }
+
+    .trusted-by-investors-div-3-inner{
+        width:70%;
+    }
+
+    .hero-div-start-investing{
+        width:70%;
+    }
+
+    .why-zentrivex-trade-div2-wrap{
+        width:95%;
+    }
+
+    .tradingview-widget-container{
+        width:100% !important;
+    }
+
+}
+
+
+/* ---------------------- Mobile ---------------------- */
+@media screen and (max-width:768px){
+
+.landing-hero-page{
+    height:auto;
+    padding:70px 0;
+}
+
+.landing-hero-page-wrap{
+    width:92%;
+}
+
+.landing-hero-page-div-1{
+    height:auto;
+    text-align:center;
+}
+
+.landing-hero-page-div-1 h1{
+    font-size:38px !important;
+}
+
+.landing-hero-page-div-2{
+    height:auto;
+    text-align:center;
+    margin-top:20px;
+}
+
+.landing-hero-page-div-2 p{
+    font-size:17px;
+}
+
+.landing-hero-page-div-3{
+    flex-direction:column;
+    gap:30px;
+    margin-top:40px;
+}
+
+.hero-statistics-div1,
+.hero-statistics-div2,
+.hero-statistics-div3{
+    width:100%;
+    border-right:none;
+    border-bottom:1px solid gray;
+    padding:20px 0;
+}
+
+.hero-statistics-div3{
+    border-bottom:none;
+}
+
+.hero-statistics-div1 h1,
+.hero-statistics-div2 h1,
+.hero-statistics-div3 h1{
+    font-size:38px !important;
+}
+
+.landing-hero-page-div-4{
+    height:auto;
+    margin-top:30px;
+}
+
+.hero-div-start-investing{
+    width:100%;
+    flex-direction:column;
+    gap:15px;
+}
+
+.start-investing-btn,
+.view-market-btn{
+    width:100%;
+    height:55px;
+}
+
+
+/* Live Market */
+
+.live-data-market-div{
+    height:auto;
+    padding:70px 0;
+}
+
+.live-data-market-div-wrap{
+    width:94%;
+}
+
+.live-data-market-div-1{
+    height:auto;
+    text-align:center;
+}
+
+.live-data-market-div-1 h1{
+    font-size:30px;
+}
+
+.live-data-market-div-1 p{
+    font-size:16px !important;
+}
+
+.live-data-market-div-2{
+    height:auto;
+}
+
+.live-data-market-div-2-main{
+    height:auto;
+}
+
+.tradingview-widget-container{
+    width:100% !important;
+    height:400px !important;
+}
+
+
+/* Why Section */
+
+.why-zentrivex-trade{
+    height:auto;
+    padding:70px 0;
+}
+
+.why-zentrivex-trade-div-1{
+    height:auto;
+}
+
+.why-zentrivex-trade-div-1-wrap{
+    width:95%;
+}
+
+.why-zentrivex-trade-div-1-wrap-top{
+    width:220px;
+    height:50px;
+}
+
+.why-zentrivex-trade-div-1-wrap-btm{
+    text-align:center;
+}
+
+.why-zentrivex-trade-div-1-wrap-btm h1{
+    font-size:30px !important;
+}
+
+.why-zentrivex-trade-div2{
+    height:auto;
+    margin-top:40px;
+}
+
+.why-zentrivex-trade-div2-wrap{
+    width:95%;
+}
+
+.why-zentrivex-trade-div2-box-top,
+.why-zentrivex-trade-div2-box-btm{
+    flex-direction:column;
+    height:auto;
+}
+
+.why-zentrivex-trade-div2-box-top-1,
+.why-zentrivex-trade-div2-box-top-2,
+.why-zentrivex-trade-div2-box-top-3{
+    width:100%;
+    min-height:250px;
+}
+
+
+/* Trusted */
+
+.trusted-by-investors-div{
+    height:auto;
+    padding:70px 0;
+}
+
+.trusted-by-investors-div-1{
+    height:auto;
+}
+
+.trusted-by-investors-div-1-inner{
+    width:95%;
+    text-align:center;
+}
+
+.trusted-by-investors-div-1-inner h1{
+    font-size:30px !important;
+}
+
+.trusted-by-investors-div-2{
+    height:auto;
+    margin-top:40px;
+}
+
+.trusted-by-investors-div-2-inner{
+    width:95%;
+    padding:30px 0;
+}
+
+.trusted-by-investors-div-2-inner-wrap{
+    flex-direction:column;
+    gap:40px;
+}
+
+.trusted-by-investors-div-2-inner-wrap-1,
+.trusted-by-investors-div-2-inner-wrap-2{
+    width:100%;
+}
+
+.trusted-by-investors-div-2-inner-wrap-2{
+    flex-direction:column;
+    gap:30px;
+}
+
+.trusted-by-investors-div-2-inner-wrap-2-active-users,
+.trusted-by-investors-div-2-inner-wrap-2-asset-managed{
+    width:100%;
+}
+
+.trusted-by-investors-div-3{
+    height:auto;
+    margin-top:40px;
+}
+
+.trusted-by-investors-div-3-inner{
+    width:95%;
+    min-height:420px;
+}
+
+.trusted-by-investors-div-3-inner-wrap-div3-inner-main{
+    width:100%;
+}
+
+
+/* Images */
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+}
+
+
+/* ---------------------- Small Phones ---------------------- */
+
+@media screen and (max-width:480px){
+
+.landing-hero-page-div-1 h1{
+    font-size:30px !important;
+}
+
+.hero-statistics-div1 h1,
+.hero-statistics-div2 h1,
+.hero-statistics-div3 h1{
+    font-size:30px !important;
+}
+
+.live-data-market-div-1 h1,
+.why-zentrivex-trade-div-1-wrap-btm h1,
+.trusted-by-investors-div-1-inner h1{
+    font-size:25px !important;
+}
+
+.tradingview-widget-container{
+    height:320px !important;
+}
+
+.trusted-by-investors-div-3-inner{
+    min-height:460px;
+}
+
+.trusted-by-investors-div-3-inner-wrap-div2{
+    font-size:16px;
+}
+
+.start-investing-btn,
+.view-market-btn{
+    font-size:18px;
+}
+
+}
