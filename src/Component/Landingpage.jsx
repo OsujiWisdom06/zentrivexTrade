@@ -385,9 +385,9 @@ useEffect(() => {
       <div
         className="dingviewtra-widget-container"
         ref={chartRef}
-        style={{
-          width: "60%",
-          height: "50vh",
+        style={{ 
+          width: "85%",
+          height: "63vh",
           margin: "0 auto", }} >
         <div
           className="tradingview-widget-container__widget"
