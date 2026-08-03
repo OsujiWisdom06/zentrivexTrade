@@ -1,468 +1,366 @@
-.login-main{
-    width: 100%;
-    height: 100vh;
-      background-color: #374151;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.login-main {
+  width: 100%;
+  height: 100vh;
+  background-color: #374151;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.login-main-div{
-    width: 37%;
-    height: 85%;
-     background-color: #000000;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.login-main-div {
+  width: 37%;
+  height: 85%;
+  background-color: #000000;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.login-main-div-wrap{
-    width: 89%;
-    height: 100%;
-    /* background-color: yellow; */
-    display: flex;
-    flex-direction: column;
+.login-main-div-wrap {
+  width: 89%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.login-main-div-top{
-    width: 100%;
-    height: 22%;
-    /* background-color: blue; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.login-main-div-top {
+  width: 100%;
+  height: 22%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.login-main-div-top1{
-    width: 60%;
-    height: 72%;
-    /* background-color: yellow; */
-
-    & img {
-        width: 100%;
-        height: 100%;
-    }
+.login-main-div-top1 {
+  width: 60%;
+  height: 72%;
 }
 
-.login-main-div-top2{
-    width: 100%;
-    height: 28%;
-    /* background-color: green; */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 600;
-    display: flex;
-    justify-content: center;
-    color: gray;
-    font-size: 16px;
+.login-main-div-top1 img {
+  width: 100%;
+  height: 100%;
 }
 
-
-.login-main-div-btm{
-    width: 100%;
-    height: 78%;
-    /* background-color: magenta; */
-    display: flex;
-    flex-direction: column;
+.login-main-div-top2 {
+  width: 100%;
+  height: 28%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  color: gray;
+  font-size: 16px;
 }
 
-.login-main-form{
-    width: 100%;
-    height: 74%;
-    /* background-color: blue; */
-    display: flex;
-    flex-direction: column;
-
+.login-main-div-btm {
+  width: 100%;
+  height: 78%;
+  display: flex;
+  flex-direction: column;
 }
 
-.login-main-form-div-top{
-     width: 100%;
-    height: 60%;
-    /* background-color: magenta;   */
-    display: flex;
-    flex-direction: column;
- }
-
- .login-email-div{
-    width: 100%;
-    height: 50%;
-    /* background-color: yellow; */
-    font-weight: 600;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: white;
-    gap: 5px;
-    display: flex;
-    flex-direction: column;
- }
-
- .input-div{
-    width: 100%;
-    height: 100%;
-    /* background-color: red; */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
- }
-
- .login-input-div-main{
-    width: 80%;
-    height: 100%;
-    /* background-color: blue; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
- }
-
- .login-hide-icon{
-    width: 20%;
-    height: 100%;
-    border-radius: 0px 8px 8px 0px;
-    display: flex;
-    padding-right: 10px;
-    justify-content: end;
-    background-color: white;
-    align-items: center;
- }
-
- .login-input{
-    width: 100%;
-    height: 100%;
-    padding-left: 10px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* font-weight: 600; */
-    font-size: 17px;
-    border-radius: 8px 0px 0px 8px;
-    border: none;
-    outline: none;
- }
-
- 
- .login-input-email{
-     width: 100%;
-    height: 100%;
-    padding-left: 10px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 17px;
-    border-radius: 8px;
-    border: none;
-    outline: none;
- }
-
- .password-eye{
-    color: black;
-    cursor: pointer;
-    font-size: 20px;
- }
-
- .login-password-div{
-    width: 100%;
-    height: 52%;
-    /* background-color: purple; */
-    padding-top: 2px;
-    font-weight: 600;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
-    color: white;
-    gap: 5px;
-    flex-direction: column;
- }
-
-
-
-.login-main-form-div2-btm{
-   width: 100%;
-   height: 40%;
-   /* background-color: maroon;  */
-   display: flex;
-   flex-direction: column; 
+.login-main-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
-.login-main-form-sign-in-btn{
-    width: 100%;
-    height: 50%;
-    /* background-color: yellow; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* =======================
+   FIELD STRUCTURE (FIXED)
+======================= */
+
+.login-field {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
-.login-sign-in-btn{
-    width: 100%;
-    height: 80%;
-    background-color: #438617;
-     border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 600;
-    color: white;
-    font-size: 18px;
-    transition: 350ms ease-in-out;
-    transform: scale(1);
+.login-field label {
+  color: white;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 8px;
+  font-size: 15px;
 }
 
-.login-sign-in-btn:hover{
+/* Email input */
+.login-input-email {
+  width: 100%;
+  height: 52px;
+  padding-left: 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 17px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+/* Password input + icon */
+.input-with-icon {
+  display: flex;
+  width: 100%;
+  height: 52px;
+}
+
+.login-input {
+  width: 80%;
+  height: 100%;
+  padding-left: 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 17px;
+  border-radius: 8px 0 0 8px;
+  border: none;
+  outline: none;
+}
+
+.login-hide-icon {
+  width: 20%;
+  height: 100%;
+  background-color: white;
+  border-radius: 0 8px 8px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.password-eye {
+  color: black;
+  font-size: 18px;
+}
+
+/* =======================
+   REMEMBER ME + BUTTON
+======================= */
+
+.login-main-form-remember-me-div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.login-remember-me-div {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  gap: 10px;
+  font-size: 14px;
+  color: white;
+}
+
+.login-remember-me-div2 {
+  width: 50%;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #438617;
+  font-size: 14px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.login-main-form-sign-in-btn {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.login-sign-in-btn {
+  width: 100%;
+  height: 52px;
+  background-color: #438617;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  color: white;
+  font-size: 18px;
+  transition: 350ms ease-in-out;
+  transform: scale(1);
+}
+
+.login-sign-in-btn:hover {
   transform: scale(1.02);
 }
 
-.login-main-form-remember-me-div{
-    width: 100%;
-    height: 50%;
-    /* background-color: magenta; */
-    display: flex;
-    flex-direction: row;
+.login-main-dont-have-an-account-div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 18px;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 17px;
 }
 
-.login-remember-me-div{
-    width: 50%;
-    height: 100%;
-    /* background-color: red; */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-weight: 600;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    gap: 10px;
-    font-size: 14px;
-    color: white;
+/* =======================
+   ERROR STYLES
+======================= */
+
+.error-text {
+  color: #ff4d4f;
+  font-size: 12.5px;
+  margin-top: 6px;
+  display: block;
+  font-weight: 500;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.login-remember-me-div2{
-    width: 50%;
-    height: 100%;
-    /* background-color:blue; */
-    font-weight: 600;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #438617;
-    font-size: 14px;
-    display: flex;
-    justify-content: end;
-    align-items: center;
+.input-error {
+  border: 1.5px solid #ff4d4f !important;
 }
-
-.login-main-dont-have-an-account-div{
-    width: 100%;
-    height: 30%;
-    /* background-color: green; */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-top: 18px;
-    font-weight: 600;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 17px;
-}
-
 
 /* ==========================================================
    RESPONSIVE DESIGN
 ========================================================== */
 
-/* ===========================
-   Small Laptop
-=========================== */
+@media screen and (max-width: 1024px) {
+  .login-main {
+    padding: 40px 20px;
+    height: auto;
+    min-height: 100vh;
+  }
 
-@media screen and (max-width:1024px){
+  .login-main-div {
+    width: 60%;
+    height: auto;
+    padding: 35px 0;
+  }
 
-.login-main{
-    padding:40px 20px;
-    height:auto;
-    min-height:100vh;
+  .login-main-div-wrap {
+    height: auto;
+  }
+
+  .login-main-div-top {
+    height: auto;
+  }
+
+  .login-main-div-top1 {
+    width: 55%;
+    height: auto;
+  }
+
+  .login-main-div-top2 {
+    height: auto;
+    margin-top: 15px;
+  }
+
+  .login-main-div-btm {
+    height: auto;
+  }
+
+  .login-input-email,
+  .input-with-icon {
+    height: 55px;
+  }
+
+  .login-sign-in-btn {
+    height: 55px;
+  }
 }
 
-.login-main-div{
-    width:60%;
-    height:auto;
-    padding:35px 0;
+@media screen and (max-width: 768px) {
+  .login-main {
+    padding: 30px 20px;
+  }
+
+  .login-main-div {
+    width: 85%;
+  }
+
+  .login-main-div-top1 {
+    width: 60%;
+  }
+
+  .login-main-div-top2 {
+    text-align: center;
+    font-size: 15px;
+  }
+
+  .login-main-form-remember-me-div {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .login-remember-me-div,
+  .login-remember-me-div2 {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .login-main-dont-have-an-account-div {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+  }
 }
 
-.login-main-div-wrap{
-    height:auto;
-}
+@media screen and (max-width: 480px) {
+  .login-main {
+    padding: 20px 15px;
+  }
 
-.login-main-div-top{
-    height:auto;
-}
+  .login-main-div {
+    width: 100%;
+    border-radius: 8px;
+    padding: 30px 0;
+  }
 
-.login-main-div-top1{
-    width:55%;
-    height:auto;
-}
+  .login-main-div-wrap {
+    width: 90%;
+  }
 
-.login-main-div-top2{
-    height:auto;
-    margin-top:15px;
-}
+  .login-main-div-top1 {
+    width: 70%;
+  }
 
-.login-main-div-btm{
-    height:auto;
-}
+  .login-main-div-top2 {
+    font-size: 14px;
+  }
 
-.login-main-form{
-    height:auto;
-}
+  .login-field label {
+    font-size: 14px;
+  }
 
-.login-main-form-div-top{
-    height:auto;
-}
+  .login-input-email,
+  .login-input {
+    font-size: 15px;
+  }
 
-.login-email-div,
-.login-password-div{
-    height:auto;
-    gap:10px;
-    margin-top:20px;
-}
+  .login-input-email,
+  .input-with-icon {
+    height: 50px;
+  }
 
-.login-input-email{
-    height:55px;
-}
+  .password-eye {
+    font-size: 17px;
+  }
 
-.input-div{
-    height:55px;
-}
+  .login-remember-me-div {
+    font-size: 13px;
+  }
 
-.login-main-form-div2-btm{
-    height:auto;
-    margin-top:30px;
-}
+  .login-remember-me-div2 {
+    font-size: 13px;
+  }
 
-.login-main-form-sign-in-btn{
-    height:auto;
-    margin-top:25px;
-}
+  .login-sign-in-btn {
+    height: 50px;
+    font-size: 17px;
+  }
 
-.login-sign-in-btn{
-    height:55px;
-}
-
-.login-main-dont-have-an-account-div{
-    height:auto;
-    margin-top:25px;
-}
-
-}
-
-
-/* ===========================
-   Tablets
-=========================== */
-
-@media screen and (max-width:768px){
-
-.login-main{
-    padding:30px 20px;
-}
-
-.login-main-div{
-    width:85%;
-}
-
-.login-main-div-top1{
-    width:60%;
-}
-
-.login-main-div-top2{
-    text-align:center;
-    font-size:15px;
-}
-
-.login-main-form-remember-me-div{
-    flex-direction:column;
-    gap:15px;
-}
-
-.login-remember-me-div,
-.login-remember-me-div2{
-    width:100%;
-    justify-content:flex-start;
-}
-
-.login-main-dont-have-an-account-div{
-    flex-direction:column;
-    gap:12px;
-    align-items:center;
-    text-align:center;
-    font-size:16px;
-}
-
-}
-
-
-/* ===========================
-   Mobile Phones
-=========================== */
-
-@media screen and (max-width:480px){
-
-.login-main{
-    padding:20px 15px;
-}
-
-.login-main-div{
-    width:100%;
-    border-radius:8px;
-    padding:30px 0;
-}
-
-.login-main-div-wrap{
-    width:90%;
-}
-
-.login-main-div-top1{
-    width:70%;
-}
-
-.login-main-div-top2{
-    font-size:14px;
-}
-
-.login-email-div,
-.login-password-div{
-    font-size:15px;
-}
-
-.login-input-email,
-.login-input{
-    font-size:15px;
-}
-
-.login-input-email{
-    height:50px;
-}
-
-.input-div{
-    height:50px;
-}
-
-.login-hide-icon{
-    padding-right:15px;
-}
-
-.password-eye{
-    font-size:18px;
-}
-
-.login-main-form-remember-me-div{
-    gap:15px;
-}
-
-.login-remember-me-div{
-    font-size:13px;
-    flex-wrap:wrap;
-}
-
-.login-remember-me-div2{
-    font-size:13px;
-}
-
-.login-sign-in-btn{
-    height:50px;
-    font-size:17px;
-}
-
-.login-main-dont-have-an-account-div{
-    font-size:15px;
-    gap:10px;
-}
-
+  .login-main-dont-have-an-account-div {
+    font-size: 15px;
+    gap: 10px;
+  }
 }
