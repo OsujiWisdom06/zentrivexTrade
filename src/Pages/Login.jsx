@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react'
 import "../styles/login.css"
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
@@ -6,6 +5,8 @@ import { useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import axios from 'axios'
+import { useDispatch } from 'react-redux'
+import { loginSuccess } from '../Redux/slices/authSlice.js'
 
 
 const BASE_URL = 'https://zentrivex-backend.onrender.com'
@@ -13,6 +14,7 @@ const BASE_URL = 'https://zentrivex-backend.onrender.com'
 const Login = () => {
   const zentrivexlogo = "/src/assets/zentrivextradelogo.jpeg"
   const nav = useNavigate()
+  const dispatch = useDispatch()
 
   // Form states
   const [email, setEmail] = useState('')
@@ -96,12 +98,22 @@ const Login = () => {
 
         console.log('Login successful:', response.data)
 
-        // These will be moved to Redux later
         const token = response.data.token
         const user = response.data.user
 
-        console.log('Token:', token)
-        console.log('User:', user)
+        // =====================================================
+        // SAVE LOGIN DATA TO REDUX
+        // =====================================================
+
+        dispatch(
+          loginSuccess({
+            token,
+            user
+          })
+        )
+
+        console.log('Token saved to Redux:', token)
+        console.log('User saved to Redux:', user)
         console.log('Remember me:', rememberMe)
 
         toast.success(
@@ -133,7 +145,7 @@ const Login = () => {
       } else if (error.request) {
 
         toast.error(
-          'Unable to connect to the server. Please try again.'
+          'Oops! Network error. Please try again.'
         )
 
       } else {
@@ -141,6 +153,7 @@ const Login = () => {
         toast.error(
           'Something went wrong. Please try again.'
         )
+
       }
 
     } finally {

@@ -109,7 +109,7 @@ const Forgotpassword = () => {
       } else if (error.request) {
 
         toast.error(
-          'Unable to connect to the server. Please try again.'
+          'Oops! Network error. Please try again.'
         )
 
       } else {

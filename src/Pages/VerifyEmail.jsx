@@ -6,9 +6,7 @@ import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
-
 const BASE_URL = 'https://zentrivex-backend.onrender.com'
-
 
 const VerifyEmail = () => {
 
@@ -35,13 +33,22 @@ const VerifyEmail = () => {
 
     const verifyEmail = async () => {
 
-      // Check if token exists
+      // =====================================================
+      // CHECK TOKEN
+      // =====================================================
+
       if (!token) {
 
         setIsLoading(false)
 
         toast.error(
-          'Invalid or missing verification link.'
+          'Invalid or missing verification link.',
+          {
+            autoClose: 3000,
+            onClose: () => {
+              nav('/login')
+            }
+          }
         )
 
         return
@@ -50,7 +57,10 @@ const VerifyEmail = () => {
 
       try {
 
-        // GET verify email endpoint
+        // =====================================================
+        // GET VERIFY EMAIL ENDPOINT
+        // =====================================================
+
         const response = await axios.get(
           `${BASE_URL}/api/auth/verify-email?token=${token}`
         )
@@ -66,14 +76,30 @@ const VerifyEmail = () => {
 
           toast.success(
             response.data.message ||
-            'Email verified successfully!'
+            'Email verified successfully!',
+            {
+              autoClose: 3000,
+              onClose: () => {
+                nav('/login')
+              }
+            }
           )
 
         } else {
 
+          // =====================================================
+          // VERIFICATION FAILED
+          // =====================================================
+
           toast.error(
             response.data.message ||
-            'Email verification failed.'
+            'Email verification failed.',
+            {
+              autoClose: 3000,
+              onClose: () => {
+                nav('/login')
+              }
+            }
           )
 
         }
@@ -90,26 +116,20 @@ const VerifyEmail = () => {
         // BACKEND ERROR
         // =====================================================
 
-        if (error.response) {
+        const errorMessage =
+          error.response?.data?.message ||
+          'Unable to verify your email.'
 
-          toast.error(
-            error.response.data?.message ||
-            'Unable to verify your email.'
-          )
 
-        } else if (error.request) {
-
-          toast.error(
-            'Unable to connect to the server. Please try again.'
-          )
-
-        } else {
-
-          toast.error(
-            'Something went wrong. Please try again.'
-          )
-
-        }
+        toast.error(
+          errorMessage,
+          {
+            autoClose: 3000,
+            onClose: () => {
+              nav('/login')
+            }
+          }
+        )
 
       } finally {
 
@@ -122,7 +142,7 @@ const VerifyEmail = () => {
 
     verifyEmail()
 
-  }, [token])
+  }, [token, nav])
 
 
   return (
@@ -170,9 +190,9 @@ const VerifyEmail = () => {
         <div className='verifyemail-main-inner-btm'>
 
 
-          {/* ============================
+          {/* =====================================================
               VERIFYING
-          ============================ */}
+          ===================================================== */}
 
           {isLoading && (
 
@@ -193,9 +213,9 @@ const VerifyEmail = () => {
           )}
 
 
-          {/* ============================
+          {/* =====================================================
               SUCCESS
-          ============================ */}
+          ===================================================== */}
 
           {!isLoading && isVerified && (
 
@@ -211,26 +231,17 @@ const VerifyEmail = () => {
 
               <p>
                 Your email has been successfully verified.
-                You can now log in to your Zentrivex Trade account.
+                Redirecting you to login...
               </p>
-
-
-              <button
-                type="button"
-                className='verifyemail-btn'
-                onClick={() => nav('/login')}
-              >
-                Go to Login
-              </button>
 
             </div>
 
           )}
 
 
-          {/* ============================
+          {/* =====================================================
               FAILED
-          ============================ */}
+          ===================================================== */}
 
           {!isLoading && !isVerified && (
 
@@ -246,17 +257,8 @@ const VerifyEmail = () => {
 
               <p>
                 This verification link is invalid or has expired.
-                Please request a new verification email.
+                Redirecting you to login...
               </p>
-
-
-              <button
-                type="button"
-                className='verifyemail-btn'
-                onClick={() => nav('/login')}
-              >
-                Go to Login
-              </button>
 
             </div>
 
@@ -291,7 +293,7 @@ const VerifyEmail = () => {
 
 
       {/* =====================================================
-          TOAST NOTIFICATIONS
+          TOAST CONTAINER
       ===================================================== */}
 
       <ToastContainer
@@ -309,5 +311,5 @@ const VerifyEmail = () => {
   )
 }
 
-
 export default VerifyEmail
+
