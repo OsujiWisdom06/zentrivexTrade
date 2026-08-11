@@ -21,6 +21,7 @@ import DasboardInvestmentPlans from './Component/DasboardInvestmentPlans'
 import { ToastContainer } from 'react-toastify'
 import MyTransactions from './Pages/My Transaction'
 import MyMarkets from './Pages/Mymarket'
+import VerifyEmail from './Pages/VerifyEmail'
 
 
 const App = () => {
@@ -47,6 +48,7 @@ const App = () => {
             <Route path='/register' element={<SignUp/>}></Route>
              <Route path='/forgot-password' element={<Forgotpassword/>}></Route>
               <Route path='/reset-password' element={<Resetpassword/>}></Route>
+              <Route path='/verify-email' element={<VerifyEmail/>}></Route>
               <Route path='/market-overview' element={<ViewMarket />}></Route>
                <Route path='/dash-board' element={< SumarryDasboard/>}></Route>
                 <Route path='/profile' element={<Profile/>}></Route>

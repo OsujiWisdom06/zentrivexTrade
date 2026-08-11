@@ -1,0 +1,309 @@
+
+/* =====================================================
+   VERIFY EMAIL MAIN
+===================================================== */
+
+.Verifyemail-main {
+  width: 100%;
+  min-height: 100vh;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
+
+.Verifyemail-main-inner {
+  width: 35%;
+  min-width: 350px;
+  max-width: 500px;
+  background: #111;
+  padding: 35px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   TOP SECTION
+===================================================== */
+
+.verifyemail-main-inner-top {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.verifyemail-main-inner-top-image-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.verifyemail-main-inner-top-image-top img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+
+/* =====================================================
+   TOP TEXT
+===================================================== */
+
+.verifyemail-main-inner-top-text-top {
+  margin-top: 20px;
+}
+
+.verifyemail-main-inner-top-text-top h1 {
+  color: white;
+  font-size: 30px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.verifyemail-main-inner-top-text-top p {
+  color: gray;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+
+/* =====================================================
+   BOTTOM / CONTENT
+===================================================== */
+
+.verifyemail-main-inner-btm {
+  width: 100%;
+  margin-top: 35px;
+}
+
+
+/* =====================================================
+   STATUS CONTENT
+===================================================== */
+
+.verifyemail-status {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.verifyemail-status h2 {
+  color: white;
+  font-size: 22px;
+  margin: 18px 0 10px;
+}
+
+.verifyemail-status p {
+  color: gray;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 400px;
+}
+
+
+/* =====================================================
+   LOADING SPINNER
+===================================================== */
+
+.verifyemail-loader {
+  width: 45px;
+  height: 45px;
+  border: 4px solid #333;
+  border-top: 4px solid #438617;
+  border-radius: 50%;
+  animation: verifyEmailSpin 1s linear infinite;
+}
+
+@keyframes verifyEmailSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =====================================================
+   SUCCESS ICON
+===================================================== */
+
+.verifyemail-success-icon {
+  width: 60px;
+  height: 60px;
+  background: #438617;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+
+/* =====================================================
+   ERROR ICON
+===================================================== */
+
+.verifyemail-error-icon {
+  width: 60px;
+  height: 60px;
+  background: #8b1e1e;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+
+/* =====================================================
+   LOGIN BUTTON
+===================================================== */
+
+.verifyemail-btn {
+  width: 100%;
+  height: 50px;
+  margin-top: 25px;
+  border: none;
+  border-radius: 6px;
+  background: #438617;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.verifyemail-btn:hover {
+  background: #356d12;
+}
+
+.verifyemail-btn:active {
+  transform: scale(0.98);
+}
+
+
+/* =====================================================
+   BOTTOM TEXT
+===================================================== */
+
+.Verifyemail-main-bottom {
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.Verifyemail-main-bottom p {
+  color: white;
+  margin: 0;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .Verifyemail-main-inner {
+    width: 50%;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .Verifyemail-main {
+    padding: 15px;
+  }
+
+  .Verifyemail-main-inner {
+    width: 100%;
+    min-width: unset;
+    padding: 25px 20px;
+  }
+
+  .verifyemail-main-inner-top-text-top h1 {
+    font-size: 26px;
+  }
+
+  .verifyemail-main-inner-top-image-top img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .verifyemail-status h2 {
+    font-size: 20px;
+  }
+
+  .verifyemail-status p {
+    font-size: 13px;
+  }
+
+  .Verifyemail-main-bottom {
+    font-size: 13px;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+  .Verifyemail-main-inner {
+    padding: 22px 15px;
+  }
+
+  .verifyemail-main-inner-top-text-top h1 {
+    font-size: 23px;
+  }
+
+  .verifyemail-success-icon,
+  .verifyemail-error-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 27px;
+  }
+
+  .verifyemail-btn {
+    height: 48px;
+  }
+
+}
