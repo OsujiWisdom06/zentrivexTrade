@@ -11,6 +11,10 @@ const TopHeader = ({ toggleSidebar }) => {
   // Get the currently logged-in user from Redux
   const user = useSelector((state) => state.auth.user);
 
+  // Get only the first name
+  const firstName =
+    user?.fullName?.trim().split(/\s+/)[0] || "User";
+
   return (
     <header className="top-header">
 
@@ -28,7 +32,7 @@ const TopHeader = ({ toggleSidebar }) => {
           <h1 className="welcome-text">
             Welcome,{" "}
             <strong>
-              {user?.fullName || "User"}
+              {firstName}
             </strong>{" "}
             👋
           </h1>
