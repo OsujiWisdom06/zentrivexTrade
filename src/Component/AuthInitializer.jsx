@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setUser, logout, setLoading } from "../redux/slice/authslice";
+import { setUser, logout, setLoading } from "../Redux/slices/authSlice.js";
 
 const AuthInitializer = ({ children }) => {
   const dispatch = useDispatch();

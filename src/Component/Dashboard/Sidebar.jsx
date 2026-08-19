@@ -12,7 +12,7 @@ import {
 import { IoClose } from "react-icons/io5";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { logout } from "../../redux/slice/authslice";
+import { logout } from "../../Redux/slices/authSlice.js";
 import "../../styles/sidebar.css";
 
 const Sidebar = ({ isOpen, closeSidebar }) => {

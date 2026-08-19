@@ -1,220 +1,226 @@
-import React, { useState } from 'react'
-import "../styles/login.css"
-import { FaEye, FaEyeSlash } from 'react-icons/fa'
-import { useNavigate } from 'react-router-dom'
-import { ToastContainer, toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
-import axios from 'axios'
-import { useDispatch } from 'react-redux'
-import { loginSuccess } from '../Redux/slices/authSlice.js'
+import React, { useState } from "react";
+import "../styles/login.css";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { setCredentials } from "../Redux/slices/authSlice.js";
 
-
-const BASE_URL = 'https://zentrivex-backend.onrender.com'
+const BASE_URL = "https://zentrivex-backend.onrender.com";
 
 const Login = () => {
-  const zentrivexlogo = "/src/assets/zentrivextradelogo.jpeg"
-  const nav = useNavigate()
-  const dispatch = useDispatch()
+  const zentrivexlogo =
+    "/src/assets/zentrivextradelogo.jpeg";
+
+  const nav = useNavigate();
+  const dispatch = useDispatch();
 
   // Form states
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [showPassword, setShowPassword] = useState(false)
-  const [rememberMe, setRememberMe] = useState(false)
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
 
   // Loading state
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
 
   // Error states
   const [errors, setErrors] = useState({
-    email: '',
-    password: ''
-  })
-
+    email: "",
+    password: "",
+  });
 
   // =====================================================
   // VALIDATION
   // =====================================================
 
   const validateForm = () => {
-    let isValid = true
+    let isValid = true;
 
     const newErrors = {
-      email: '',
-      password: ''
-    }
+      email: "",
+      password: "",
+    };
 
     if (!email.trim()) {
-      newErrors.email = 'Email is required'
-      isValid = false
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      newErrors.email = 'Please enter a valid email address'
-      isValid = false
+      newErrors.email = "Email is required";
+      isValid = false;
+    } else if (
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+    ) {
+      newErrors.email =
+        "Please enter a valid email address";
+      isValid = false;
     }
 
     if (!password) {
-      newErrors.password = 'Password is required'
-      isValid = false
+      newErrors.password = "Password is required";
+      isValid = false;
     } else if (password.length < 6) {
-      newErrors.password = 'Password must be at least 6 characters'
-      isValid = false
+      newErrors.password =
+        "Password must be at least 6 characters";
+      isValid = false;
     }
 
-    setErrors(newErrors)
+    setErrors(newErrors);
 
-    return isValid
-  }
-
+    return isValid;
+  };
 
   // =====================================================
   // LOGIN API
   // =====================================================
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     if (!validateForm()) {
-      return
+      return;
     }
 
-    setIsLoading(true)
+    setIsLoading(true);
 
     try {
-
       const response = await axios.post(
         `${BASE_URL}/api/auth/login`,
         {
           email: email.trim().toLowerCase(),
-          password: password
+          password: password,
         }
-      )
-
+      );
 
       // =====================================================
       // LOGIN SUCCESS
       // =====================================================
 
       if (response.data.success) {
+        console.log(
+          "Login successful:",
+          response.data
+        );
 
-        console.log('Login successful:', response.data)
-
-        const token = response.data.token
-        const user = response.data.user
+        const token = response.data.token;
+        const user = response.data.user;
 
         // =====================================================
         // SAVE LOGIN DATA TO REDUX
         // =====================================================
 
         dispatch(
-          loginSuccess({
+          setCredentials({
             token,
-            user
+            user,
           })
-        )
+        );
 
-        console.log('Token saved to Redux:', token)
-        console.log('User saved to Redux:', user)
-        console.log('Remember me:', rememberMe)
+        console.log(
+          "Token saved to Redux:",
+          token
+        );
+
+        console.log(
+          "User saved to Redux:",
+          user
+        );
+
+        console.log(
+          "Remember me:",
+          rememberMe
+        );
 
         toast.success(
-          response.data.message || 'Login successful!'
-        )
+          response.data.message ||
+            "Login successful!"
+        );
 
         // Navigate after successful login
         setTimeout(() => {
-          nav('/dash-board')
-        }, 1000)
+          nav("/dash-board");
+        }, 1000);
       }
-
     } catch (error) {
-
-      console.error('Login error:', error)
-
+      console.error("Login error:", error);
 
       // =====================================================
       // BACKEND ERROR
       // =====================================================
 
       if (error.response) {
-
         toast.error(
           error.response.data?.message ||
-          'Invalid email or password.'
-        )
-
+            "Invalid email or password."
+        );
       } else if (error.request) {
-
         toast.error(
-          'Oops! Network error. Please try again.'
-        )
-
+          "Oops! Network error. Please try again."
+        );
       } else {
-
         toast.error(
-          'Something went wrong. Please try again.'
-        )
-
+          "Something went wrong. Please try again."
+        );
       }
-
     } finally {
-
-      setIsLoading(false)
-
+      setIsLoading(false);
     }
-  }
-
+  };
 
   return (
-    <div className='login-main'>
+    <div className="login-main">
 
-      <div className='login-main-div'>
+      <div className="login-main-div">
 
-        <div className='login-main-div-wrap'>
+        <div className="login-main-div-wrap">
 
-          <div className='login-main-div-top'>
+          <div className="login-main-div-top">
 
-            <div className='login-main-div-top1'>
-              <img src={zentrivexlogo} alt="logo" />
+            <div className="login-main-div-top1">
+              <img
+                src={zentrivexlogo}
+                alt="logo"
+              />
             </div>
 
-            <div className='login-main-div-top2'>
-              <p>Your Modern Investment Platform</p>
+            <div className="login-main-div-top2">
+              <p>
+                Your Modern Investment Platform
+              </p>
             </div>
 
           </div>
 
-
-          <div className='login-main-div-btm'>
+          <div className="login-main-div-btm">
 
             <form
-              className='login-main-form'
+              className="login-main-form"
               onSubmit={handleSubmit}
             >
 
               {/* ========== Email Field ========== */}
 
-              <div className='login-field'>
+              <div className="login-field">
 
                 <label>Email</label>
 
                 <input
                   className={`login-input-email ${
-                    errors.email ? 'input-error' : ''
+                    errors.email
+                      ? "input-error"
+                      : ""
                   }`}
                   type="email"
-                  placeholder='Enter your email...'
+                  placeholder="Enter your email..."
                   value={email}
                   onChange={(e) => {
-
-                    setEmail(e.target.value)
+                    setEmail(e.target.value);
 
                     if (errors.email) {
                       setErrors({
                         ...errors,
-                        email: ''
-                      })
+                        email: "",
+                      });
                     }
-
                   }}
                 />
 
@@ -226,46 +232,51 @@ const Login = () => {
 
               </div>
 
-
               {/* ========== Password Field ========== */}
 
-              <div className='login-field'>
+              <div className="login-field">
 
                 <label>Password</label>
 
-                <div className='input-with-icon'>
+                <div className="input-with-icon">
 
                   <input
                     className={`login-input ${
-                      errors.password ? 'input-error' : ''
+                      errors.password
+                        ? "input-error"
+                        : ""
                     }`}
-                    type={showPassword ? 'text' : 'password'}
-                    placeholder='Enter your password...'
+                    type={
+                      showPassword
+                        ? "text"
+                        : "password"
+                    }
+                    placeholder="Enter your password..."
                     value={password}
                     onChange={(e) => {
-
-                      setPassword(e.target.value)
+                      setPassword(e.target.value);
 
                       if (errors.password) {
                         setErrors({
                           ...errors,
-                          password: ''
-                        })
+                          password: "",
+                        });
                       }
-
                     }}
                   />
 
                   <div
-                    className='login-hide-icon'
+                    className="login-hide-icon"
                     onClick={() =>
-                      setShowPassword(!showPassword)
+                      setShowPassword(
+                        !showPassword
+                      )
                     }
                   >
                     {showPassword ? (
-                      <FaEyeSlash className='password-eye' />
+                      <FaEyeSlash className="password-eye" />
                     ) : (
-                      <FaEye className='password-eye' />
+                      <FaEye className="password-eye" />
                     )}
                   </div>
 
@@ -279,33 +290,37 @@ const Login = () => {
 
               </div>
 
-
               {/* ========== Remember Me + Forgot Password ========== */}
 
-              <div className='login-main-form-remember-me-div'>
+              <div className="login-main-form-remember-me-div">
 
-                <div className='login-remember-me-div'>
+                <div className="login-remember-me-div">
 
                   <input
                     type="checkbox"
                     checked={rememberMe}
                     onChange={(e) =>
-                      setRememberMe(e.target.checked)
+                      setRememberMe(
+                        e.target.checked
+                      )
                     }
                   />
 
-                  <p>Remember this Device</p>
+                  <p>
+                    Remember this Device
+                  </p>
 
                 </div>
 
-
-                <div className='login-remember-me-div2'>
+                <div className="login-remember-me-div2">
 
                   <p
                     onClick={() =>
                       nav("/forgot-password")
                     }
-                    style={{ cursor: "pointer" }}
+                    style={{
+                      cursor: "pointer",
+                    }}
                   >
                     Forgot Password?
                   </p>
@@ -314,35 +329,37 @@ const Login = () => {
 
               </div>
 
-
               {/* ========== Sign In Button ========== */}
 
-              <div className='login-main-form-sign-in-btn'>
+              <div className="login-main-form-sign-in-btn">
 
                 <button
                   type="submit"
-                  className='login-sign-in-btn'
+                  className="login-sign-in-btn"
                   disabled={isLoading}
                 >
-                  {isLoading ? 'Signing In...' : 'Sign In'}
+                  {isLoading
+                    ? "Signing In..."
+                    : "Sign In"}
                 </button>
 
               </div>
 
             </form>
 
-
-            <div className='login-main-dont-have-an-account-div'>
+            <div className="login-main-dont-have-an-account-div">
 
               <p style={{ color: "white" }}>
                 New to ZentrivexTrade?
               </p>
 
               <p
-                onClick={() => nav("/register")}
+                onClick={() =>
+                  nav("/register")
+                }
                 style={{
                   color: "#438617",
-                  cursor: "pointer"
+                  cursor: "pointer",
                 }}
               >
                 Create an account
@@ -355,7 +372,6 @@ const Login = () => {
         </div>
 
       </div>
-
 
       {/* Toast Notifications */}
 
@@ -370,7 +386,7 @@ const Login = () => {
       />
 
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
