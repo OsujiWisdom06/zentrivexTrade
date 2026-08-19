@@ -22,6 +22,7 @@ import { ToastContainer } from 'react-toastify'
 import MyTransactions from './Pages/My Transaction'
 import MyMarkets from './Pages/Mymarket'
 import VerifyEmail from './Pages/VerifyEmail'
+import AuthInitializer from './Component/AuthInitializer'
 
 
 const App = () => {
@@ -38,6 +39,8 @@ const App = () => {
   pauseOnHover
   toastClassName="custom-toast"
 />
+
+   <AuthInitializer>
           <EarningsNotification/>
          <Routes>
           <Route path='/' element={<SplashScreen/>}></Route>
@@ -62,6 +65,7 @@ const App = () => {
                    <Route path='/dashboard/my-market' element={ < MyMarkets />}></Route>
 
           </Routes>
+          </AuthInitializer>
         </BrowserRouter>
     </div>
   )

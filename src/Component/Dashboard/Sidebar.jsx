@@ -11,11 +11,15 @@ import {
 } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { NavLink, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logout } from "../../redux/slice/authslice";
 import "../../styles/sidebar.css";
 
 const Sidebar = ({ isOpen, closeSidebar }) => {
   const nav = useNavigate();
-  const zentrivexlogo = "/src/assets/zentrivextradelogo.jpeg"
+  const dispatch = useDispatch();
+
+  const zentrivexlogo = "/src/assets/zentrivextradelogo.jpeg";
 
   const menuItems = [
     {
@@ -70,17 +74,36 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
     },
   ];
 
+  // ==========================================
+  // LOGOUT
+  // ==========================================
+
+  const handleLogout = () => {
+    // Clear user and token from Redux
+    dispatch(logout());
+
+    // Close sidebar
+    closeSidebar();
+
+    // Redirect to home/login
+    nav("/");
+  };
+
   return (
     <>
       {/* Overlay */}
       {isOpen && (
-        <div className="sidebar-overlay" onClick={closeSidebar}></div>
+        <div
+          className="sidebar-overlay"
+          onClick={closeSidebar}
+        ></div>
       )}
 
-      <aside className={`sidebar ${isOpen ? "active" : ""}`}>
+      <aside
+        className={`sidebar ${isOpen ? "active" : ""}`}
+      >
 
         {/* Mobile Close Button */}
-
         <button
           className="sidebar-close-btn"
           onClick={closeSidebar}
@@ -89,10 +112,14 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
         </button>
 
         <div className="sidebar-top">
-         <img src="zentrivexlogo" alt="logo" />
+          <img
+            src={zentrivexlogo}
+            alt="Zentrivex Trade logo"
+          />
         </div>
 
         <div className="sidebar-links">
+
           {menuItems.map((item, index) => (
             <NavLink
               key={index}
@@ -108,19 +135,19 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
               <p>{item.name}</p>
             </NavLink>
           ))}
+
         </div>
 
         <div className="logout-section">
+
           <button
             className="logout-btn"
-            onClick={() => {
-              closeSidebar();
-              nav("/");
-            }}
+            onClick={handleLogout}
           >
             <FaSignOutAlt />
             Logout
           </button>
+
         </div>
 
       </aside>

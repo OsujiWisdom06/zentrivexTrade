@@ -4,8 +4,7 @@ const initialState = {
   user: null,
   token: null,
   isAuthenticated: false,
-  loading: false,
-  error: null,
+  loading: true,
 };
 
 const authSlice = createSlice({
@@ -14,84 +13,55 @@ const authSlice = createSlice({
   initialState,
 
   reducers: {
-    // =====================================================
-    // LOGIN
-    // =====================================================
+    // ==========================================
+    // SET USER + TOKEN AFTER LOGIN
+    // ==========================================
 
-    loginSuccess: (state, action) => {
-      state.user = action.payload.user;
-      state.token = action.payload.token;
+    setCredentials: (state, action) => {
+      const { user, token } = action.payload;
+
+      state.user = user;
+      state.token = token;
       state.isAuthenticated = true;
       state.loading = false;
-      state.error = null;
     },
 
-    // =====================================================
+    // ==========================================
+    // UPDATE CURRENT USER
+    // ==========================================
+
+    setUser: (state, action) => {
+      state.user = action.payload;
+      state.isAuthenticated = true;
+      state.loading = false;
+    },
+
+    // ==========================================
+    // SET LOADING
+    // ==========================================
+
+    setLoading: (state, action) => {
+      state.loading = action.payload;
+    },
+
+    // ==========================================
     // LOGOUT
-    // =====================================================
+    // ==========================================
 
     logout: (state) => {
       state.user = null;
       state.token = null;
       state.isAuthenticated = false;
       state.loading = false;
-      state.error = null;
-    },
-
-    // =====================================================
-    // SET USER
-    // =====================================================
-
-    setUser: (state, action) => {
-      state.user = action.payload;
-      state.isAuthenticated = true;
-    },
-
-    // =====================================================
-    // CLEAR USER
-    // =====================================================
-
-    clearUser: (state) => {
-      state.user = null;
-      state.token = null;
-      state.isAuthenticated = false;
-    },
-
-    // =====================================================
-    // LOADING
-    // =====================================================
-
-    setAuthLoading: (state, action) => {
-      state.loading = action.payload;
-    },
-
-    // =====================================================
-    // ERROR
-    // =====================================================
-
-    setAuthError: (state, action) => {
-      state.error = action.payload;
-      state.loading = false;
-    },
-
-    // =====================================================
-    // CLEAR ERROR
-    // =====================================================
-
-    clearAuthError: (state) => {
-      state.error = null;
     },
   },
 });
 
 export const {
-  loginSuccess,
-  logout,
+  setCredentials,
   setUser,
-  clearUser,
-  setAuthLoading,
-  setAuthError,
-  clearAuthError,
+  setLoading,
+  logout,
 } = authSlice.actions;
 
 export default authSlice.reducer;
