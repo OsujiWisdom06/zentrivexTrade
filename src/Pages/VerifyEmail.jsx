@@ -1,315 +1,184 @@
-
-import React, { useEffect, useState } from 'react'
-import "../styles/verifyemail.css"
-import { useNavigate, useSearchParams } from 'react-router-dom'
-import axios from 'axios'
-import { ToastContainer, toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
-
-const BASE_URL = 'https://zentrivex-backend.onrender.com'
+import React, { useEffect, useState } from "react";
+import {
+  FaCheck,
+  FaArrowRight,
+  FaShieldAlt,
+  FaTimes,
+} from "react-icons/fa";
+import {
+  useNavigate,
+  useSearchParams,
+} from "react-router-dom";
+import "../styles/verifyemail.css";
 
 const VerifyEmail = () => {
+  const nav = useNavigate();
+  const [searchParams] = useSearchParams();
 
-  const zentrivexlogo = "/src/assets/zentrivextradelogo.jpeg"
+  const [status, setStatus] = useState("verifying");
+  const [message, setMessage] = useState("");
 
-  const nav = useNavigate()
-
-  // Get token from URL
-  const [searchParams] = useSearchParams()
-  const token = searchParams.get('token')
-
-  // Loading state
-  const [isLoading, setIsLoading] = useState(true)
-
-  // Verification state
-  const [isVerified, setIsVerified] = useState(false)
-
-
-  // =====================================================
-  // VERIFY EMAIL API
-  // =====================================================
+  const BASE_URL = "https://zentrivex-backend.onrender.com";
 
   useEffect(() => {
-
-    const verifyEmail = async () => {
-
-      // =====================================================
-      // CHECK TOKEN
-      // =====================================================
+    const verifyUserEmail = async () => {
+      const token = searchParams.get("token");
 
       if (!token) {
-
-        setIsLoading(false)
-
-        toast.error(
-          'Invalid or missing verification link.',
-          {
-            autoClose: 3000,
-            onClose: () => {
-              nav('/login')
-            }
-          }
-        )
-
-        return
+        setStatus("error");
+        setMessage("Verification token is missing.");
+        return;
       }
-
 
       try {
-
-        // =====================================================
-        // GET VERIFY EMAIL ENDPOINT
-        // =====================================================
-
-        const response = await axios.get(
-          `${BASE_URL}/api/auth/verify-email?token=${token}`
-        )
-
-
-        // =====================================================
-        // SUCCESS
-        // =====================================================
-
-        if (response.data.success) {
-
-          setIsVerified(true)
-
-          toast.success(
-            response.data.message ||
-            'Email verified successfully!',
-            {
-              autoClose: 3000,
-              onClose: () => {
-                nav('/login')
-              }
-            }
-          )
-
-        } else {
-
-          // =====================================================
-          // VERIFICATION FAILED
-          // =====================================================
-
-          toast.error(
-            response.data.message ||
-            'Email verification failed.',
-            {
-              autoClose: 3000,
-              onClose: () => {
-                nav('/login')
-              }
-            }
-          )
-
-        }
-
-      } catch (error) {
-
-        console.error(
-          'Email verification error:',
-          error
-        )
-
-
-        // =====================================================
-        // BACKEND ERROR
-        // =====================================================
-
-        const errorMessage =
-          error.response?.data?.message ||
-          'Unable to verify your email.'
-
-
-        toast.error(
-          errorMessage,
+        const response = await fetch(
+          `${BASE_URL}/api/auth/verify-email?token=${encodeURIComponent(token)}`,
           {
-            autoClose: 3000,
-            onClose: () => {
-              nav('/login')
-            }
+            method: "GET",
           }
-        )
+        );
 
-      } finally {
+        const data = await response.json();
 
-        setIsLoading(false)
+        if (response.ok && data.success) {
+          setStatus("success");
+          setMessage(
+            data.message || "Email verified successfully."
+          );
+        } else {
+          setStatus("error");
+          setMessage(
+            data.message ||
+              "Invalid or expired verification link."
+          );
+        }
+      } catch (error) {
+        console.error("Email verification error:", error);
 
+        setStatus("error");
+        setMessage(
+          "Unable to verify your email right now. Please try again later."
+        );
       }
+    };
 
-    }
+    verifyUserEmail();
+  }, [searchParams]);
 
+  const handleLogin = () => {
+    nav("/login");
+  };
 
-    verifyEmail()
+  // =========================
+  // VERIFYING
+  // =========================
 
-  }, [token, nav])
+  if (status === "verifying") {
+    return (
+      <div className="verify-email-page">
+        <div className="verify-email-card">
 
+          <div className="verification-icon-wrapper">
+            <div className="verification-icon verifying-icon">
+              ...
+            </div>
+          </div>
+
+          <h1>
+            Verifying Your <span>Email...</span>
+          </h1>
+
+          <div className="verification-line"></div>
+
+          <p className="verification-message">
+            Please wait while we verify your email address.
+          </p>
+
+        </div>
+      </div>
+    );
+  }
+
+  // =========================
+  // ERROR
+  // =========================
+
+  if (status === "error") {
+    return (
+      <div className="verify-email-page">
+        <div className="verify-email-card">
+
+          <div className="verification-icon-wrapper error-wrapper">
+            <div className="verification-icon error-icon">
+              <FaTimes />
+            </div>
+          </div>
+
+          <h1>
+            Verification <span>Failed</span>
+          </h1>
+
+          <div className="verification-line"></div>
+
+          <p className="verification-message">
+            {message}
+          </p>
+
+          <button
+            className="verification-login-btn"
+            onClick={handleLogin}
+          >
+            <span>Go to Login</span>
+            <FaArrowRight />
+          </button>
+
+        </div>
+      </div>
+    );
+  }
+
+  // =========================
+  // SUCCESS
+  // =========================
 
   return (
+    <div className="verify-email-page">
+      <div className="verify-email-card">
 
-    <div className='Verifyemail-main'>
-
-      <div className='Verifyemail-main-inner'>
-
-
-        {/* =====================================================
-            TOP SECTION
-        ===================================================== */}
-
-        <div className='verifyemail-main-inner-top'>
-
-          <div className='verifyemail-main-inner-top-image-top'>
-
-            <img
-              src={zentrivexlogo}
-              alt="Zentrivex Trade logo"
-            />
-
+        <div className="verification-icon-wrapper">
+          <div className="verification-icon">
+            <FaCheck />
           </div>
-
-
-          <div className='verifyemail-main-inner-top-text-top'>
-
-            <h1>
-              Verify Your Email
-            </h1>
-
-            <p>
-              Confirming your email address...
-            </p>
-
-          </div>
-
         </div>
 
+        <h1>
+          Your Email Has Been <span>Verified!</span>
+        </h1>
 
-        {/* =====================================================
-            VERIFICATION CONTENT
-        ===================================================== */}
+        <div className="verification-line"></div>
 
-        <div className='verifyemail-main-inner-btm'>
+        <p className="verification-message">
+          {message}
+        </p>
 
+        <button
+          className="verification-login-btn"
+          onClick={handleLogin}
+        >
+          <span>Login to Your Account</span>
+          <FaArrowRight />
+        </button>
 
-          {/* =====================================================
-              VERIFYING
-          ===================================================== */}
-
-          {isLoading && (
-
-            <div className='verifyemail-status'>
-
-              <div className='verifyemail-loader'></div>
-
-              <h2>
-                Verifying your email
-              </h2>
-
-              <p>
-                Please wait while we verify your email address.
-              </p>
-
-            </div>
-
-          )}
-
-
-          {/* =====================================================
-              SUCCESS
-          ===================================================== */}
-
-          {!isLoading && isVerified && (
-
-            <div className='verifyemail-status'>
-
-              <div className='verifyemail-success-icon'>
-                ✓
-              </div>
-
-              <h2>
-                Email Verified!
-              </h2>
-
-              <p>
-                Your email has been successfully verified.
-                Redirecting you to login...
-              </p>
-
-            </div>
-
-          )}
-
-
-          {/* =====================================================
-              FAILED
-          ===================================================== */}
-
-          {!isLoading && !isVerified && (
-
-            <div className='verifyemail-status'>
-
-              <div className='verifyemail-error-icon'>
-                !
-              </div>
-
-              <h2>
-                Verification Failed
-              </h2>
-
-              <p>
-                This verification link is invalid or has expired.
-                Redirecting you to login...
-              </p>
-
-            </div>
-
-          )}
-
-        </div>
-
-
-        {/* =====================================================
-            BOTTOM TEXT
-        ===================================================== */}
-
-        <div className='Verifyemail-main-bottom'>
-
-          <p>
-            Already verified your email?
-          </p>
-
-          <p
-            style={{
-              color: "#438617",
-              cursor: "pointer"
-            }}
-            onClick={() => nav('/login')}
-          >
-            Sign In
-          </p>
-
+        <div className="security-message">
+          <FaShieldAlt />
+          <span>
+            Your account is now secure and ready to use.
+          </span>
         </div>
 
       </div>
-
-
-      {/* =====================================================
-          TOAST CONTAINER
-      ===================================================== */}
-
-      <ToastContainer
-        position="top-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop
-        closeOnClick
-        pauseOnHover
-        draggable
-      />
-
     </div>
+  );
+};
 
-  )
-}
-
-export default VerifyEmail
-
+export default VerifyEmail;
